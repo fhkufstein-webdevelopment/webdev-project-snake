@@ -4,40 +4,14 @@ echo $this->header;
 
 ?>
 <div id="main">
-    <div class="row">
-
-        <button class="btn btn-primary" data-toggle="modal" data-target="#editModal"><i class="glyphicon glyphicon-plus"></i> Neue Adresse anlegen</button>
-
-        <?php if($this->addresses): ?>
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Vorname</th>
-                    <th>Ort</th>
-                    <th>Bearbeiten</th>
-                    <th>Löschen</th>
-                </tr>
-            </thead>
-            <tbody>
-            <?php foreach($this->addresses as $address): ?>
-                <tr>
-                    <td><?php echo $address->id; ?></td>
-                    <td><?php echo $address->lastname; ?></td>
-                    <td><?php echo $address->firstname; ?></td>
-                    <td><?php echo $address->city; ?></td>
-                    <td><button class="btn btn-default" data-toggle="modal" data-target="#editModal" data-id="<?php echo $address->id; ?>"><i class="glyphicon glyphicon-pencil"></i> Bearbeiten</button></td>
-                    <td><a class="btn btn-danger triggerDelete" href="api/address/" data-id="<?php echo $address->id; ?>"><i class="glyphicon glyphicon-trash"></i> Löschen</a></td>
-                </tr>
-            <?php endforeach; ?>
-            </tbody>
-        </table>
-        <?php else: ?>
-                <p>&nbsp;</p>
-                <div class="alert alert-info">Noch keine Adressen vorhanden - Sie können über den Button <strong>Neue Adresse anlegen</strong> eine neue Adresse Ihrer Adressverwaltung hinzufügen.</div>
-        <?php endif; ?>
-
+    <div>
+        <input type="number" id="xInput" value="10">
+        <input type="number" id="yInput" value="10">
+        <button type="button" id="input">Eingeben</button>
+        <button type="button" id="loeschen">Löschen</button>
+        <p id="info">points: </p>
+        <canvas id="gameCanvas" width="800" height="800"></canvas>
+        <script type="text/javascript" src="js/snake.js"></script>
     </div>
 </div>
 
