@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function(event) {
-    let canv = document.getElementById("gameCanvas");  // select canvas
+    let canv = document.getElementById("field");  // select canvas
     let ctx = canv.getContext("2d");   // set canvas to be a 2d objekt
 
     /* -----------------------------------------------actual mechanic------------------------------------------------------------------ */
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     let appleColor = "#7CFC00";  // color of the apple
 
     let appleX;                  // x position of the apple
-    let appleY;                  // y positon of the apple
+    let appleY;                  // y position of the apple
 
     let applePoints = 10;        // amount of points to get if collected
     let applewidth = 25;         // width of the apple
