@@ -19,7 +19,7 @@ class ScoreModel
 		return null;
 	}
 
-	public static function getGlobalHighscore()
+	public static function getGlobalHighscoreList()
 	{
 		$db = new Database();
 
@@ -41,6 +41,22 @@ class ScoreModel
 
 		return null;
 	}
+
+    public static function getGlobalHighscore()
+    {
+        $db = new Database();
+
+        // returns only the global absolute Highscore
+        $sql = "SELECT user.name, max(highscore.score) FROM highscore join user on highscore.user_id = user.id";
+        $result = $db->query($sql);
+
+        if($db->numRows($result) > 0)
+        {
+            return $db->fetchObject($result);
+        }
+
+        return null;
+    }
 
 	public static function createNewScore($userID,$score)
 	{
