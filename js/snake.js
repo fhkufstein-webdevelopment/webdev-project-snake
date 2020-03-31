@@ -1,5 +1,10 @@
 // base function where all other function are called
 document.addEventListener("DOMContentLoaded", function(event) {
+
+   //  variables for game status
+   var gameRunning = false;
+   var gameFinished = false; // if gameFinished true -> send score to database
+
    let canvas = document.getElementById('field');
 
    let interValTimer = 600;                // timeinterval for the game
