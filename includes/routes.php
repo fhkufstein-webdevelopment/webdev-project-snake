@@ -1,9 +1,9 @@
 <?php
 
 //define Routes
-$route['/'] = array('controller' => 'IndexController', 'uniqueName' => 'index');
-$route['/index'] = array('controller' => 'IndexController', 'uniqueName' => 'index');
-$route['/index.html'] = array('controller' => 'IndexController', 'uniqueName' => 'index');
+$route['/'] = array('controller' => 'GameController', 'uniqueName' => 'index');
+$route['/index'] = array('controller' => 'GameController', 'uniqueName' => 'index');
+$route['/index.html'] = array('controller' => 'GameController', 'uniqueName' => 'index');
 
 
 $route['/login'] = array('controller' => 'LoginController', 'uniqueName' => 'login');

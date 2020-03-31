@@ -62,7 +62,11 @@ class ScoreModel
 	{
 		$db = new Database();
 
-		$sql = "INSERT INTO higscore(score,user_id) VALUES('".$db->escapeString($score['score'])."','".$db->escapeString($userID['user_id'])."','";
+        $userid = $db->escapeString($userID);
+        $score = $db->escapeString($score);
+
+
+		$sql = "INSERT INTO highscore (`score`,`user_id`) VALUES('\".$userid.\"','\".$score.\"')";
 		$db->query($sql);
 
 		/*$data['id'] = $db->insertId();
