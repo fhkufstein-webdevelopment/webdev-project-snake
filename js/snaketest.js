@@ -12,21 +12,20 @@ snake [0] = {
     y: Math.floor(canvasSize / 2 * box)
 };
 let dir;
-document.addEventListener("keydown",function(event){
-  if (event.keyCode === 37 && dir !== "RIGHT") {
-      dir = "LEFT";
-  } else if (event.keyCode === 38 && dir !== "DOWN") {
-      dir = "UP";
-  } else if (event.keyCode === 39 && dir !== "LEFT") {
-      dir = "RIGHT";
-  } else if (event.keyCode === 40 && dir !== "UP") {
-      dir = "DOWN";
-  }
+document.addEventListener("keydown", function (event) {
+    if (event.keyCode === 37 && dir !== "RIGHT") {
+        dir = "LEFT";
+    } else if (event.keyCode === 38 && dir !== "DOWN") {
+        dir = "UP";
+    } else if (event.keyCode === 39 && dir !== "LEFT") {
+        dir = "RIGHT";
+    } else if (event.keyCode === 40 && dir !== "UP") {
+        dir = "DOWN";
+    }
 });
 
 
-
-function draw(canvas,ctx,dir) {
+function draw(canvas, ctx, dir) {
     //Hintergrund malen
     ctx.fillStyle = "lightgreen";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -36,15 +35,27 @@ function draw(canvas,ctx,dir) {
         ctx.fillRect(snake[i].x, snake[i].y, box, box);
     }
 
+    let snakeX = snake[0].x;
+    let snakeY = snake[0].y;
+
     //Schlange bewegen
     if (dir === "LEFT")
-        snake[0].x -= box;
+        snakeX -= box;
     if (dir === "RIGHT")
-        snake[0].x += box;
+        snakeX += box;
     if (dir === "UP")
-        snake[0].y -= box;
+        snakeY -= box;
     if (dir === "DOWN")
-        snake[0].y += box;
-    points += snakeOver(snake[0].x,snake[0].y,canvas,ctx,box);
-    document.getElementById("info").innerText = "Points: "+points;
-};
+        snakeY += box;
+
+    let newHead = {
+        x: snakeX,
+        y: snakeY
+    };
+    //newHead wird zur Schlange hinzugefügt
+    snake.unshift(newHead);
+
+    points += snakeOver(snake[0].x, snake[0].y, canvas, ctx, box);
+    document.getElementById("info").innerText = "Points: " + points;
+}
+

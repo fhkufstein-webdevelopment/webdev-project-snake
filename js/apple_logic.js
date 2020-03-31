@@ -40,6 +40,7 @@ let newapple = true;
      newapple = true;
      return applePoints; // return the amount fo points you gain
    }else{
+     snake.pop(); //snake grows by one rectangle
      return 0;
    }
 
