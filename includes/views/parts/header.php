@@ -1,16 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
-    <title><?php echo $this->title; ?></title>
+    <title>SNAKE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-
-    <?php if ($this->current == "login"): ?>
-        <link href="css/toastr.min.css" rel="stylesheet">
-    <?php endif; ?>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"/>
     <link href="css/main.css" rel="stylesheet">
-
     <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 
     <?php if ($this->current == "index"): ?>
