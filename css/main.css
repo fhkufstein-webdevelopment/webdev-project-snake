@@ -112,6 +112,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   color: rgba(0, 0, 0, 0.6);
 }
 /* line 50, ../scss/_login.scss */
+.login-page .alert {
+  margin-top: 1rem;
+  color: darkred;
+}
+/* line 55, ../scss/_login.scss */
 .login-page .modal {
   position: absolute;
   top: 0;
@@ -119,7 +124,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   opacity: 0;
   pointer-events: none;
 }
-/* line 58, ../scss/_login.scss */
+/* line 63, ../scss/_login.scss */
 .login-page .active {
   opacity: 1;
   pointer-events: all;

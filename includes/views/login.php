@@ -11,17 +11,14 @@ echo $this->header;
                     Melden Sie sich bitte an um den Dienst nutzen zu können.<br>Sie besitzen noch keinen Account?<br>Dann
                     können Sie sich <span id="register">hier registrieren</span>.
                 </p>
-            </header>
-            <form method="post" action="login">
                 <?php if ($this->errorPasswd == true): ?>
-                    <div class="alert alert-danger alert-dismissible fade in" role="alert">
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                        <h4>Benutzername und/oder Passwort sind falsch</h4>
-                        <p>Prüfen Sie bitte ob Sie sich nicht vertippt haben und versuchen Sie es erneut!</p>
+                    <div class="alert" role="alert">
+                        <h4>Benutzername/Passwort sind falsch!</h4>
+                        <p>Bitte versuchen Sie es erneut.</p>
                     </div>
                 <?php endif; ?>
+            </header>
+            <form method="post" action="login">
                 <input type="text" name="username" id="username" value="" placeholder="Benutzername">
 
                 <input type="password" name="password" id="password" value="" placeholder="Passwort">
@@ -30,7 +27,6 @@ echo $this->header;
                 <input type="hidden" name="action" value="login">
             </form>
         </section>
-
 
         <section class="modal<?php if ($registerError): ?>active<?php endif; ?>" id="registerModal" tabindex="-1"
                  role="dialog" aria-labelledby="registerModalLabel">
