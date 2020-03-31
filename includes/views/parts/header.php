@@ -9,12 +9,6 @@
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/bootstrap-theme.min.css" rel="stylesheet">
 
-    <!-- Import of the game Engine -->
-    <script type="text/javascript" src="js/snake.js"></script>
-    <script type="text/javascript" src="js/apple_logic.js"></script>
-    <script type="text/javascript" src="js/snaketest.js"></script>
-
-
 	<?php if($this->current == "login"): ?>
 		<link href="css/toastr.min.css" rel="stylesheet">
 	<?php endif; ?>
@@ -29,9 +23,10 @@
         <!-- Import of the game Engine -->
         <script type="text/javascript" src="js/snake.js"></script>
         <script type="text/javascript" src="js/apple_logic.js"></script>
-        <script type="text/javascript" src="js/snaketest.js"></script>
-
+        <script type="text/javascript" src="js/movement.js"></script>
+        <script type="text/javascript" src="js/collision.js"></script>
 		<script type="text/javascript" src="js/score.js"></script>
+
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"/>
         <link rel="stylesheet" href="../../css/style.css" />
 	<?php elseif($this->current == "register"): ?>

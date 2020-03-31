@@ -1,11 +1,7 @@
 let box = 25;
 let canvasSize = 23;
 
-let points = 0;
-
-
-
-
+let points; // there is a variable userScore in snake.js as well?!
 
 let game = setInterval(draw, 100);
 

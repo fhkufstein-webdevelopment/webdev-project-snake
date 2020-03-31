@@ -7,7 +7,7 @@ jQuery(document).ready(function() {
 
     // if variable gameFinished is set true then save score
     if (gameFinished){
-        saveScore(); //get user score and put it in the brackets
+        saveScore(userScore);
     }
 
 
@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 function saveScore(userScore) {
 
     $.ajax({
-        'url': 'game',
+        'url': 'index',
         'method': 'post',
         'data': {'action': 'saveScore', 'score': userScore},
         'success': function (receivedData) {
