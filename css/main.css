@@ -1,67 +1,277 @@
-/* line 11, ../scss/main.scss */
-#main {
-  margin: 0 auto;
-  width: 90%;
+/* line 5, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
-@media (min-width: 990px) {
-  /* line 11, ../scss/main.scss */
-  #main {
-    width: 990px;
-  }
+
+/* line 22, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../../../../../usr/local/lib/ruby/gems/2.7.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 1, ../scss/_login.scss */
+.login-page {
+  text-align: center;
+  position: relative;
+}
+/* line 6, ../scss/_login.scss */
+.login-page header h2 {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+/* line 11, ../scss/_login.scss */
+.login-page header p {
+  margin-bottom: 2rem;
+}
+/* line 14, ../scss/_login.scss */
+.login-page header p span {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* line 21, ../scss/_login.scss */
+.login-page .login {
+  opacity: 0;
+  pointer-events: none;
+}
+/* line 26, ../scss/_login.scss */
+.login-page form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin: 0 auto;
+}
+/* line 32, ../scss/_login.scss */
+.login-page form input {
+  margin-bottom: 1rem;
+  padding: 6px;
+  background-color: unset;
+  color: inherit;
+  border: 3px solid black;
+}
+/* line 39, ../scss/_login.scss */
+.login-page form input:focus {
+  outline: 2px solid black;
+  outline-offset: 2px;
+}
+/* line 45, ../scss/_login.scss */
+.login-page form ::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+/* line 50, ../scss/_login.scss */
+.login-page .modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+/* line 58, ../scss/_login.scss */
+.login-page .active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* line 1, ../scss/_logout.scss */
+.logout {
+  text-align: center;
+}
+/* line 4, ../scss/_logout.scss */
+.logout h1,
+.logout p {
+  margin-bottom: 1rem;
+}
+
+/* line 5, ../scss/main.scss */
+html {
+  background-color: #9ac40a;
+  font-family: "Press Start 2P", cursive;
+  font-size: 12px;
+}
+
+/* line 11, ../scss/main.scss */
+body {
+  height: 100vh;
+  margin: 0 20px;
+  max-width: 660px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  line-height: 1.2rem;
 }
 
 /* line 21, ../scss/main.scss */
+a {
+  color: black;
+}
+
+/* line 25, ../scss/main.scss */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 32, ../scss/main.scss */
+button {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/* line 39, ../scss/main.scss */
 header {
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 3rem;
 }
-/* line 22, ../scss/main.scss */
-header .inner {
-  margin: 0 auto;
-  width: 90%;
+/* line 43, ../scss/main.scss */
+header h1 {
+  font-size: 3rem;
 }
-/* line 26, ../scss/main.scss */
-header .inner .logo {
-  margin-top: 10px;
-  margin-bottom: 30px;
+
+/* line 48, ../scss/main.scss */
+canvas {
+  width: calc(100% - 6px);
+  border: 3px solid black;
+  margin-bottom: 10px;
 }
-/* line 30, ../scss/main.scss */
-header .inner .logo .name {
-  font-size: 25px;
-  font-weight: 400;
+
+/* line 55, ../scss/main.scss */
+.game .score {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
 }
-/* line 35, ../scss/main.scss */
-header .inner .logo .version {
-  color: #aaa;
-  font-size: 10px;
-}
-/* line 36, ../scss/main.scss */
-header .inner .logo .version::before {
-  content: "Version";
-  display: inline-block;
-  margin-right: 5px;
-}
-@media (min-width: 990px) {
-  /* line 22, ../scss/main.scss */
-  header .inner {
-    width: 990px;
-  }
-}
-/* line 54, ../scss/main.scss */
-header::after {
-  content: '';
-  display: block;
-  height: 10px;
+/* line 61, ../scss/main.scss */
+.game .score::after {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  content: "";
   width: 100%;
-  background-color: #337ab7;
-  margin-top: 5px;
+  height: 3px;
+  transform: translateY(2px);
+  background-color: black;
 }
 
-/* line 67, ../scss/main.scss */
-.toast-success {
-  background-color: #dff0d8;
+/* line 74, ../scss/main.scss */
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #000;
+  margin-top: 10px;
+}
+/* line 83, ../scss/main.scss */
+nav button:first-of-type {
+  transform: translateX(-6px);
+}
+/* line 87, ../scss/main.scss */
+nav button:last-of-type {
+  transform: translateX(6px);
+}
+/* line 92, ../scss/main.scss */
+nav::before {
+  position: absolute;
+  left: 0;
+  top: -13px;
+  content: "";
+  width: 100%;
+  height: 3px;
+  transform: translateY(2px);
+  background-color: black;
 }
 
-/* line 68, ../scss/main.scss */
-.toast-error {
-  background-color: #f2dede;
+/* line 104, ../scss/main.scss */
+.ol {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+/* line 112, ../scss/main.scss */
+.ol.score {
+  left: 0;
+  transform: translateX(-100%);
+}
+/* line 117, ../scss/main.scss */
+.ol.user {
+  left: 0;
+  transform: translateX(100%);
+}
+
+/* line 123, ../scss/main.scss */
+.question {
+  margin-top: 8vh;
+}
+
+/* Media Queries */
+@media (min-width: 660px) {
+  /* line 130, ../scss/main.scss */
+  html {
+    font-size: 16px;
+  }
+
+  /* line 134, ../scss/main.scss */
+  body {
+    margin: 0 auto;
+  }
 }
