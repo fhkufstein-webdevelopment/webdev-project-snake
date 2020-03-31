@@ -2,10 +2,12 @@
 
 class ScoreModel
 {
-	public static function getAddressById($id)
+	public static function getHighscoreFromUser($id)
 	{
 		$db = new Database();
-		$sql = "SELECT * FROM address WHERE id=".intval($id);
+
+        //returns the highest score of the current user. Should be visible during the game
+		$sql = "SELECT max(score) FROM highscore WHERE user_id=".intval($id);
 
 		$result = $db->query($sql);
 
@@ -17,41 +19,42 @@ class ScoreModel
 		return null;
 	}
 
-	public static function getAddressesByUserId($userId)
+	public static function getGlobalHighscore()
 	{
 		$db = new Database();
 
-		$sql = "SELECT * FROM address WHERE userId=".intval($userId);
+		// returns a sorted list with all highscores
+		$sql = "SELECT user.name, highscore.score FROM highscore join user on highscore.user_id = user.id order by highscore.score desc";
 		$result = $db->query($sql);
 
 		if($db->numRows($result) > 0)
 		{
-			$addressesArray = array();
+			$highscoreArray = array();
 
 			while($row = $db->fetchObject($result))
 			{
-				$addressesArray[] = $row;
+				$highscoreArray[] = $row;
 			}
 
-			return $addressesArray;
+			return $highscoreArray;
 		}
 
 		return null;
 	}
 
-	public static function createNewAddress($data)
+	public static function createNewScore($userID,$score)
 	{
 		$db = new Database();
 
-		$sql = "INSERT INTO address(userId,firstname,lastname,street,zip,city) VALUES('".$db->escapeString($data['userId'])."','".$db->escapeString($data['firstname'])."','".$db->escapeString($data['lastname'])."','".$db->escapeString($data['street'])."','".$db->escapeString($data['zip'])."','".$db->escapeString($data['city'])."')";
+		$sql = "INSERT INTO higscore(score,user_id) VALUES('".$db->escapeString($score['score'])."','".$db->escapeString($userID['user_id'])."','";
 		$db->query($sql);
 
-		$data['id'] = $db->insertId();
+		/*$data['id'] = $db->insertId();
 
-		return (object) $data;
+		return (object) $data;*/
 	}
 
-	public static function saveAddress($data)
+	/*public static function saveAddress($data)
 	{
 		$db = new Database();
 
@@ -59,13 +62,6 @@ class ScoreModel
 		$db->query($sql);
 
 		return (object) $data;
-	}
+	}*/
 
-	public static function deleteAddress($id)
-	{
-		$db = new Database();
-
-		$sql = "DELETE FROM address WHERE id=".intval($id);
-		$db->query($sql);
-	}
 }
