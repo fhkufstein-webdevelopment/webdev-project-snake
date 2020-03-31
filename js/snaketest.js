@@ -4,6 +4,11 @@ let canvasSize = 23;
 let points = 0;
 
 
+
+
+
+let game = setInterval(draw, 100);
+
 // Variablendeklarierung Schlange
 let snake = [];
 //Anfangsposition Schlange
@@ -57,5 +62,11 @@ function draw(canvas, ctx, dir) {
 
     points += snakeOver(snake[0].x, snake[0].y, canvas, ctx, box);
     document.getElementById("info").innerText = "Points: " + points;
+
+    if (snakeX < box || snakeY < box || snakeX > (canvasSize - 1) * box || snakeY > (canvasSize - 1) * box
+        || collsion(newHead, snake))
+    {
+        clearInterval(game);
+    }
 }
 
