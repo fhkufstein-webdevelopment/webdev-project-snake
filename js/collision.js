@@ -1,7 +1,7 @@
 //check collision
 
 function collsion(head, array) {
-    for (let i = 0; i < array.length, i++) {
+    for (let i = 0; i < array.length; i++) {
         if (head.x === array[i].x && head.y === array[i].y) {
             return true;
         }
