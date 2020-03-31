@@ -63,6 +63,96 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
+/* Colors */
+/* line 1, ../scss/_index.scss */
+header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+/* line 5, ../scss/_index.scss */
+header h1 {
+  font-size: 3rem;
+}
+
+/* line 10, ../scss/_index.scss */
+canvas {
+  width: calc(100% - 6px);
+  border: 3px solid #192d00;
+  margin-bottom: 10px;
+}
+
+/* line 17, ../scss/_index.scss */
+.game .score {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+}
+/* line 23, ../scss/_index.scss */
+.game .score::after {
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  content: "";
+  width: 100%;
+  height: 3px;
+  transform: translateY(2px);
+  background-color: #192d00;
+}
+
+/* line 36, ../scss/_index.scss */
+nav {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  color: #000;
+  margin-top: 10px;
+}
+/* line 45, ../scss/_index.scss */
+nav button:first-of-type {
+  transform: translateX(-6px);
+}
+/* line 49, ../scss/_index.scss */
+nav button:last-of-type {
+  transform: translateX(6px);
+}
+/* line 54, ../scss/_index.scss */
+nav::before {
+  position: absolute;
+  left: 0;
+  top: -13px;
+  content: "";
+  width: 100%;
+  height: 3px;
+  transform: translateY(2px);
+  background-color: #192d00;
+}
+
+/* line 66, ../scss/_index.scss */
+.ol {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: red;
+}
+/* line 74, ../scss/_index.scss */
+.ol.score {
+  left: 0;
+  transform: translateX(-100%);
+}
+/* line 79, ../scss/_index.scss */
+.ol.user {
+  left: 0;
+  transform: translateX(100%);
+}
+
+/* line 85, ../scss/_index.scss */
+.question {
+  margin-top: 8vh;
+}
+
 /* line 1, ../scss/_login.scss */
 .login-page {
   text-align: center;
@@ -73,50 +163,46 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   font-size: 1.2rem;
   margin-bottom: 2rem;
 }
-/* line 11, ../scss/_login.scss */
-.login-page header p {
-  margin-bottom: 2rem;
-}
-/* line 14, ../scss/_login.scss */
+/* line 12, ../scss/_login.scss */
 .login-page header p span {
   text-decoration: underline;
   cursor: pointer;
 }
-/* line 21, ../scss/_login.scss */
+/* line 19, ../scss/_login.scss */
 .login-page .login {
   opacity: 0;
   pointer-events: none;
 }
-/* line 26, ../scss/_login.scss */
+/* line 24, ../scss/_login.scss */
 .login-page form {
   display: flex;
   flex-direction: column;
   max-width: 300px;
   margin: 0 auto;
 }
-/* line 32, ../scss/_login.scss */
+/* line 30, ../scss/_login.scss */
 .login-page form input {
   margin-bottom: 1rem;
   padding: 6px;
   background-color: unset;
   color: inherit;
-  border: 3px solid black;
+  border: 3px solid #192d00;
 }
-/* line 39, ../scss/_login.scss */
+/* line 37, ../scss/_login.scss */
 .login-page form input:focus {
-  outline: 2px solid black;
+  outline: 2px solid #192d00;
   outline-offset: 2px;
 }
-/* line 45, ../scss/_login.scss */
+/* line 43, ../scss/_login.scss */
 .login-page form ::placeholder {
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 50, ../scss/_login.scss */
+/* line 48, ../scss/_login.scss */
 .login-page .alert {
-  margin-top: 1rem;
+  margin-top: 2rem;
   color: darkred;
 }
-/* line 55, ../scss/_login.scss */
+/* line 53, ../scss/_login.scss */
 .login-page .modal {
   position: absolute;
   top: 0;
@@ -124,7 +210,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   opacity: 0;
   pointer-events: none;
 }
-/* line 63, ../scss/_login.scss */
+/* line 61, ../scss/_login.scss */
 .login-page .active {
   opacity: 1;
   pointer-events: all;
@@ -140,14 +226,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   margin-bottom: 1rem;
 }
 
-/* line 5, ../scss/main.scss */
+/* line 9, ../scss/main.scss */
 html {
   background-color: #9ac40a;
+  color: #192d00;
   font-family: "Press Start 2P", cursive;
   font-size: 12px;
 }
 
-/* line 11, ../scss/main.scss */
+/* line 16, ../scss/main.scss */
 body {
   height: 100vh;
   margin: 0 20px;
@@ -158,12 +245,12 @@ body {
   line-height: 1.2rem;
 }
 
-/* line 21, ../scss/main.scss */
-a {
-  color: black;
+/* line 26, ../scss/main.scss */
+a, button {
+  color: #192d00;
 }
 
-/* line 25, ../scss/main.scss */
+/* line 30, ../scss/main.scss */
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -171,7 +258,7 @@ a {
   align-items: center;
 }
 
-/* line 32, ../scss/main.scss */
+/* line 37, ../scss/main.scss */
 button {
   background: none;
   border: none;
@@ -179,103 +266,14 @@ button {
   font-size: 1rem;
 }
 
-/* line 39, ../scss/main.scss */
-header {
-  text-align: center;
-  margin-bottom: 3rem;
-}
-/* line 43, ../scss/main.scss */
-header h1 {
-  font-size: 3rem;
-}
-
-/* line 48, ../scss/main.scss */
-canvas {
-  width: calc(100% - 6px);
-  border: 3px solid black;
-  margin-bottom: 10px;
-}
-
-/* line 55, ../scss/main.scss */
-.game .score {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 18px;
-}
-/* line 61, ../scss/main.scss */
-.game .score::after {
-  position: absolute;
-  left: 0;
-  bottom: -8px;
-  content: "";
-  width: 100%;
-  height: 3px;
-  transform: translateY(2px);
-  background-color: black;
-}
-
-/* line 74, ../scss/main.scss */
-nav {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  color: #000;
-  margin-top: 10px;
-}
-/* line 83, ../scss/main.scss */
-nav button:first-of-type {
-  transform: translateX(-6px);
-}
-/* line 87, ../scss/main.scss */
-nav button:last-of-type {
-  transform: translateX(6px);
-}
-/* line 92, ../scss/main.scss */
-nav::before {
-  position: absolute;
-  left: 0;
-  top: -13px;
-  content: "";
-  width: 100%;
-  height: 3px;
-  transform: translateY(2px);
-  background-color: black;
-}
-
-/* line 104, ../scss/main.scss */
-.ol {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: red;
-}
-/* line 112, ../scss/main.scss */
-.ol.score {
-  left: 0;
-  transform: translateX(-100%);
-}
-/* line 117, ../scss/main.scss */
-.ol.user {
-  left: 0;
-  transform: translateX(100%);
-}
-
-/* line 123, ../scss/main.scss */
-.question {
-  margin-top: 8vh;
-}
-
 /* Media Queries */
 @media (min-width: 660px) {
-  /* line 130, ../scss/main.scss */
+  /* line 47, ../scss/main.scss */
   html {
     font-size: 16px;
   }
 
-  /* line 134, ../scss/main.scss */
+  /* line 51, ../scss/main.scss */
   body {
     margin: 0 auto;
   }
