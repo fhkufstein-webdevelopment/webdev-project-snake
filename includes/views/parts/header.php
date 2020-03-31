@@ -27,6 +27,8 @@
 
 	<?php if($this->current == "index"): ?>
 		<script type="text/javascript" src="js/core.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"/>
+        <link rel="stylesheet" href="../../css/style.css" />
 	<?php elseif($this->current == "register"): ?>
 		<script type="text/javascript" src="js/register.js"></script>
 	<?php elseif($this->current == "login"): ?>
@@ -38,12 +40,7 @@
 <body>
 <header>
 	<div class="inner">
-		<div class="logo">
-			<div class="name">Adressverwaltung</div>
-			<div class="version">1.0</div>
-		</div>
-
-		<?php if(LOGGED_IN == true): ?>
+        <?php if(LOGGED_IN == true): ?>
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
@@ -53,8 +50,9 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
+
 						</button>
-						<a href="/" class="navbar-brand active">Adressverwaltung</a>
+						<a class="navbar-brand active">Snake</a>
 					</div>
 
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -70,11 +68,10 @@
 				</div>
 			</nav>
 		<?php else: ?>
-			<nav class="mainnav">
-				<ul class="nav nav-pills">
-					<li<?php if($this->current == "login"): ?>class="active"<?php endif; ?>><a href="login">Login</a></li>
-				</ul>
-			</nav>
+            <div class="logo">
+                <div class="name">Snake</div>
+                <div class="version">1.0</div>
+            </div>
 		<?php endif; ?>
 
 	</div>
