@@ -39,6 +39,7 @@ function snakeOver(snakeX, snakeY, canv, ctx, snakeSize) {
         createNewCircle(canv, ctx);  // if it is ture draw anohter circle
         newapple = true;
         return applePoints; // return the amount fo points you gain
+
     } else {
         snake.pop(); //snake grows by one rectangle
         return 0;

@@ -2,9 +2,7 @@ let box = 25;
 let canvasSize = 23;
 
 let points; // there is a variable userScore in snake.js as well?!
-
-let game = setInterval(draw, 100);
-
+let game =setInterval(draw, 100);
 // Variablendeklarierung Schlange
 let snake = [];
 //Anfangsposition Schlange
@@ -28,11 +26,11 @@ document.addEventListener("keydown", function (event) {
 
 function draw(canvas, ctx, dir) {
     //Hintergrund malen
-    ctx.fillStyle = "lightgreen";
+    ctx.fillStyle = "#9ac40a";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     //Schlangenkopf malen sowie weitere Glieder hinzufügen
     for (let i = 0; i < snake.length; i++) {
-        ctx.fillStyle = "black";
+        ctx.fillStyle = "#000000";
         ctx.fillRect(snake[i].x, snake[i].y, box, box);
     }
 
@@ -53,18 +51,17 @@ function draw(canvas, ctx, dir) {
         x: snakeX,
         y: snakeY
     };
-    
+    //newHead wird zur Schlange hinzugefügt
     snake.unshift(newHead);
 
-    points += snakeOver(snake[0].x, snake[0].y, canvas, ctx, box);
-    document.getElementById("info").innerText = "Points: " + points;
 
     if (snakeX < box || snakeY < box || snakeX > (canvasSize - 1) * box || snakeY > (canvasSize - 1) * box
-        || collsion(newHead, snake))
-    {
-        clearInterval(game);
+        || collsion(newHead, snake)) {
+      clearInterval(game);
     }
-    //newHead wird zur Schlange hinzugefügt
 
+
+    points += snakeOver(snake[0].x, snake[0].y, canvas, ctx, box);
+  //  document.getElementById("info").innerText = "Points: " + points;
 }
 
