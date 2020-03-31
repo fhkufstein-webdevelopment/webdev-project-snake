@@ -13,13 +13,13 @@ snake [0] = {
 };
 let dir;
 document.addEventListener("keydown",function(event){
-  if (event.keyCode === 37) {
+  if (event.keyCode === 37 && dir !== "RIGHT") {
       dir = "LEFT";
-  } else if (event.keyCode === 38) {
+  } else if (event.keyCode === 38 && dir !== "DOWN") {
       dir = "UP";
-  } else if (event.keyCode === 39) {
+  } else if (event.keyCode === 39 && dir !== "LEFT") {
       dir = "RIGHT";
-  } else if (event.keyCode === 40) {
+  } else if (event.keyCode === 40 && dir !== "UP") {
       dir = "DOWN";
   }
 });
