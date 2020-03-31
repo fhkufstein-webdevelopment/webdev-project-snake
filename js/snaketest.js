@@ -57,8 +57,7 @@ function draw(canvas, ctx, dir) {
         x: snakeX,
         y: snakeY
     };
-    //newHead wird zur Schlange hinzugefügt
-    snake.unshift(newHead);
+
 
     points += snakeOver(snake[0].x, snake[0].y, canvas, ctx, box);
     document.getElementById("info").innerText = "Points: " + points;
@@ -68,5 +67,7 @@ function draw(canvas, ctx, dir) {
     {
         clearInterval(game);
     }
+    //newHead wird zur Schlange hinzugefügt
+    snake.unshift(newHead);
 }
 
