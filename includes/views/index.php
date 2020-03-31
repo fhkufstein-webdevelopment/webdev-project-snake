@@ -5,13 +5,8 @@ echo $this->header;
 ?>
 <div id="main">
     <div>
-        <input type="number" id="xInput" value="10">
-        <input type="number" id="yInput" value="10">
-        <button type="button" id="input">Eingeben</button>
-        <button type="button" id="loeschen">Löschen</button>
-        <p id="info">points: </p>
-        <canvas id="gameCanvas" width="800" height="800"></canvas>
-        <script type="text/javascript" src="js/snake.js"></script>
+        <p id="info"></p>
+        <canvas id="field" width="1000" height="500"></canvas>
     </div>
 </div>
 
