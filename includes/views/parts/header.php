@@ -26,6 +26,11 @@
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
 	<?php if($this->current == "index"): ?>
+        <!-- Import of the game Engine -->
+        <script type="text/javascript" src="js/snake.js"></script>
+        <script type="text/javascript" src="js/apple_logic.js"></script>
+        <script type="text/javascript" src="js/snaketest.js"></script>
+
 		<script type="text/javascript" src="js/core.js"></script>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"/>
         <link rel="stylesheet" href="../../css/style.css" />

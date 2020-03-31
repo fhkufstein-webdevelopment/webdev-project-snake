@@ -22,7 +22,7 @@ class Address extends RESTClass
 
 			if(isset($data['id']))
 			{
-				$dataForView = AddressModel::getAddressById($data['id']);
+				$dataForView = ScoreModel::getAddressById($data['id']);
 				$user = new User();
 
 				if($dataForView->userId = $user->id)
@@ -78,7 +78,7 @@ class Address extends RESTClass
 		{
 			$data['userId'] = $user->id;
 
-			AddressModel::createNewAddress($data);
+			ScoreModel::createNewAddress($data);
 
 			$jsonResponse = new JSON();
 			$jsonResponse->result = true;
@@ -114,7 +114,7 @@ class Address extends RESTClass
 
 		if(!$error)
 		{
-			$addressObj = AddressModel::getAddressById($data['id']);
+			$addressObj = ScoreModel::getAddressById($data['id']);
 
 			if($addressObj->userId != $user->id)
 			{
@@ -125,7 +125,7 @@ class Address extends RESTClass
 			}
 			else
 			{
-				AddressModel::saveAddress($data);
+				ScoreModel::saveAddress($data);
 
 				$jsonResponse = new JSON();
 				$jsonResponse->result = true;
@@ -156,7 +156,7 @@ class Address extends RESTClass
 		}
 		else
 		{
-			$addressObj = AddressModel::getAddressById($data['id']);
+			$addressObj = ScoreModel::getAddressById($data['id']);
 
 			if($addressObj->userId != $user->id)
 			{
@@ -167,7 +167,7 @@ class Address extends RESTClass
 			}
 			else
 			{
-				AddressModel::deleteAddress($addressObj->id);
+				ScoreModel::deleteAddress($addressObj->id);
 
 				$jsonResponse = new JSON();
 				$jsonResponse->result = true;

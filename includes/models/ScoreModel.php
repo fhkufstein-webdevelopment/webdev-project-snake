@@ -1,6 +1,6 @@
 <?php
 
-class AddressModel
+class ScoreModel
 {
 	public static function getAddressById($id)
 	{
