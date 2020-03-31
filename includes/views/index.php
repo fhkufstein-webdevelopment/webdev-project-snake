@@ -18,7 +18,12 @@ echo $this->header;
         </main>
         <nav>
             <button role="button" aria-label="Score">Score</button>
-            <button role="button" aria-label="User">User</button>
+            <?php if (LOGGED_IN == true): ?>
+                <a href="logout">
+                    <button role="button" aria-label="User">Logout</button>
+                </a>
+                <button role="button" aria-label="User"><?php echo $this->username; ?></button>
+            <?php endif; ?>
         </nav>
         <button class="question" role="button" aria-label="Manual">?</button>
     </div>
