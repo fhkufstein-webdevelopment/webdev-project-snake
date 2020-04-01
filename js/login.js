@@ -6,6 +6,8 @@
 jQuery(document).ready(function() {
   let registerModal = $("#registerModal");
   let login = $(".login");
+  let popUp = $("#registerModal .popup");
+  let popUpText = $("#registerModal .popup h1");
 
   $(".close").click(function(e) {
     e.preventDefault();
@@ -73,7 +75,7 @@ jQuery(document).ready(function() {
             dataType: "json",
             success: function(receivedData) {
               if (receivedData.result) {
-                toastr.success(receivedData.message);
+                popUp.addClass("success");
 
                 window.setTimeout(function() {
                   location.reload();

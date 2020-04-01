@@ -215,6 +215,25 @@ nav::before {
   opacity: 1;
   pointer-events: all;
 }
+/* line 66, ../scss/_login.scss */
+.login-page .popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #9ac40a;
+  height: 100%;
+  transform: scale(1.01);
+  opacity: 0;
+  pointer-events: none;
+}
+/* line 80, ../scss/_login.scss */
+.login-page .popup.success {
+  opacity: 1;
+}
 
 /* line 1, ../scss/_logout.scss */
 .logout {

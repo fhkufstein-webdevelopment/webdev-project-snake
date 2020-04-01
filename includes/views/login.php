@@ -28,8 +28,10 @@ echo $this->header;
             </form>
         </section>
 
-        <section class="modal<?php if ($registerError): ?>active<?php endif; ?>" id="registerModal" tabindex="-1"
-                 role="dialog" aria-labelledby="registerModalLabel">
+        <section class="modal<?php if ($registerError): ?>active<?php endif; ?>" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+            <div class="popup">
+                <h2>Erfolgreiche Registrierung!</h2>
+            </div>
             <header>
                 <h2 class="title">Registrierung</h2>
                 <p class="intro">
