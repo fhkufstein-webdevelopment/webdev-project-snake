@@ -19,6 +19,10 @@ function darwUserScore(scoreToAdd,snakeLenght) {
     document.getElementById("animals").innerText = snakeLenght; // update lenght
 }
 
+function showScoreGlobal() {
+    alert("Zeigt die Bestenliste");
+}
+
 
 function saveScore(userScore) {
 

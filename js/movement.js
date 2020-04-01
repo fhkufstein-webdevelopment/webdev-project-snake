@@ -19,8 +19,7 @@ document.addEventListener("keydown", function (event) {
     } else if (event.keyCode === 40 && dir !== "UP") {
         dir = "DOWN";
     }else if (event.keyCode === 80){
-
-
+        checkGameStatus();
     }
 });
 
