@@ -1,47 +1,62 @@
-# baseproject
+# SNAKE Game
 
-Dieses Repository können Sie als Studenten der FH Kufstein des Kurses Web Development gerne als Basis für Ihre Projektarbeit nehmen.
+Klassische Nokia Handy Spiel als kleines Browser Game
 
-Sollten Sie irgendwo über ein (c) copyright Daniel Hoover stoßen können Sie dieses gerne entfernen. Ich erhebe kein Copyright auf diesen Quelltext.
+## Kurzanleitung
 
-## Konfiguration
+Kurze Anleitung zur Aufsetzung dieses Projekts auf deinem Rechner
 
-Passen Sie bitte die Dateien /.htaccess, /includes/dbconfig.php und /includes/config.php entsprechend an. 
+### Vorinstalliert
 
-## Grundsätzliche Nutzung
+Ein paar Dinge welche bereits auf eurem Rechner laufen sollten
 
-### Routen
+```
+XAMPP
+PHPMYADMIN
+PHP
+RUBY
+COMPASS
+```
 
-Sie müssen in der Datei includes/routes.php entsprechende Routen definieren. Also bekannt geben für welche URL welcher Controller zu nutzen ist.
+### Installation
 
-### View & Controller
-Jeder View braucht einen eigenen Controller! Views liegen im Verzeichnis /includes/views/. Controller liegen im Verzeichnis /includes/views/controllers/
+Schritt für Schritt Anleitung wie man das Projekt bei sich zum laufen bekommt
 
-### Model
-Häufig macht es Sinn, dass Sie für jede Tabelle ein eigenes Model schreiben. Models finden Sie in /includes/models/
+1. XAMPP starten und PHPMyAdmin öffnen
+2. Neuen Benutzer anlegen mit den Daten welche in dbconfig.php zu finden sind
 
-### REST Klassen
 
-Jeder Restservice hat auch eine eigene Klasse und erbt von RESTClass. Einen Restservice machen Sie in der Datei /includes/restservices.php bekannt.
-Der Aufruf eines Restservices User über die API würde über /api/user/ erfolgen. (Die Klasse wird im REST Servicerequest dann Kleingeschrieben)
+## Entwicklung
 
-#### GET Request
+PHPStorm ist der empfohlene IDE für diese Projekt
 
-Holen von Daten / Views. Ruft die Methode getRequest auf - in $data finden Sie alle übergebenen Parameter (Variablen des GET Requests)
+### SCSS
 
-#### POST Request
+Filewatcher mit Compass einrichten
 
-Erzeugen von Daten. z.B. das anlegen eines neuen Nutzers. Ruft die Methode createRequest auf - in $data finden Sie alle übergebenen Parameter (Variablen des POST Requests)
+- Preferences > File Watcher > Add > Compass SCSS
 
-#### PUT Request
+mit den Arguments:
+```
+compile $ContentRoot$ $FileName$
+```
 
-Speichern von Daten. z.B. das speichern von Daten nach ändern eines Nutzers. Ruft die Methode saveRequest auf - in $data finden Sie alle übergebenen Parameter (Variablen des PUT Requests)
+oder mit Compass CLI:
+```
+compass watch
+```
 
-#### DELETE Request
+## Built With
 
-Löschen von Daten. z.B. das löschen von Nutzern. Ruft die Methode deleteRequest auf - in $data finden Sie alle übergebenen Parameter (Variablen des DELETE Requests)
+* [PHP](https://www.php.net/) - Hypertext Preprocessor
+* [phpMyAdmin](https://www.phpmyadmin.net/) - Bringing MySQL to the web
+* [jQuery](https://jquery.com/) - The Write Less, Do More, JavaScript Library
 
-## Tutorial
+## Authors
 
-Ein kleines Tutorial um mit der Erweiterung und Nutzung dieses kleinen Frameworks warm zu werden finden Sie hier:
-https://github.com/danielhoover/baseproject/wiki/Tutorial
+* Fabian Schmiederer - [Aggregrant](https://github.com/Aggregrant)
+* Felix Mayr - [felixmayr](https://github.com/felixmayr)
+* Georg Trebo - [5KR34D3R](https://github.com/5KR34D3R)
+* Hannes Sachsenmaier - [PurpleBooth](https://github.com/HannesSachsenmaier)
+
+Basisprojekt von Herr Professor Daniel Hoover - [danielhoover](https://github.com/danielhoover)
