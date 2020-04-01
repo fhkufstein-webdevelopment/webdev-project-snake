@@ -17,7 +17,6 @@ function darwUserScore(scoreToAdd,snakeLenght) {
     userPoints += scoreToAdd;
     document.getElementById("points").innerText = userPoints; // upate points
     document.getElementById("animals").innerText = snakeLenght; // update lenght
-
 }
 
 
