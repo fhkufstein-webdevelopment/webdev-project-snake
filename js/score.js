@@ -1,3 +1,4 @@
+
 /*  there are other libraries that could use "$" - so it is 100% save to use "jQuery" instead of "$"
     if you don't use any other libraries than jQuery you could still go with "$"
     so the following line would be
@@ -9,9 +10,17 @@ jQuery(document).ready(function() {
     if (gameFinished){
         saveScore(userScore);
     }
-
-
 });
+
+let userPoints = 0;
+function darwUserScore(scoreToAdd,snakeLenght) {
+    userPoints += scoreToAdd;
+    document.getElementById("points").innerText = userPoints; // upate points
+    document.getElementById("animals").innerText = snakeLenght; // update lenght
+
+}
+
+
 function saveScore(userScore) {
 
     $.ajax({

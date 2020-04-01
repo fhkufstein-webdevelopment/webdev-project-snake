@@ -8,8 +8,8 @@ echo $this->header;
         <main>
             <section class="game">
                 <div class="score">
-                    <p class="points">0129</p>
-                    <p class="animals">12</p>
+                    <p class="points" id="points">0129</p>
+                    <p class="animals" id="animals">12</p>
                 </div>
                 <canvas id="field" width="600" height="600"></canvas>
             </section>
@@ -25,7 +25,7 @@ echo $this->header;
                 <button role="button" aria-label="User"><?php echo $this->username; ?></button>
             <?php endif; ?>
         </nav>
-        <button class="question" role="button" aria-label="Manual">?</button>
+        <button class="question" role="button" aria-label="Manual" id="manual">?</button>
     </div>
 
 <?php

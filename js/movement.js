@@ -1,9 +1,7 @@
 let box = 25;
 let canvasSize = 23;
 
-let points; // there is a variable userScore in snake.js as well?!
-let game =setInterval(draw, 100);
-// Variablendeklarierung Schlange
+
 let snake = [];
 //Anfangsposition Schlange
 snake [0] = {
@@ -20,22 +18,29 @@ document.addEventListener("keydown", function (event) {
         dir = "RIGHT";
     } else if (event.keyCode === 40 && dir !== "UP") {
         dir = "DOWN";
+    }else if (event.keyCode === 80){
+        //setGameStatus();
+        test();
     }
 });
 
 
-function draw(canvas, ctx, dir) {
+function draw(canvas, ctx) {
     //Hintergrund malen
     ctx.fillStyle = "#9ac40a";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     //Schlangenkopf malen sowie weitere Glieder hinzufügen
     for (let i = 0; i < snake.length; i++) {
+        snake[i].x = exitWidth(snake[i].x,canvas);      //check if x position over the max with of the canvas // or is under it
+        snake[i].y = exitHeight(snake[i].y,canvas);     // check if y position over the max height of the canvas  // or is under it
         ctx.fillStyle = "#000000";
         ctx.fillRect(snake[i].x, snake[i].y, box, box);
+        checkInnerCollision(snake[0].x,snake[0].y,snake[i].x,snake[i].y,i,box); //check head touches the tail
     }
 
     let snakeX = snake[0].x;
     let snakeY = snake[0].y;
+
 
     //Schlange bewegen
     if (dir === "LEFT")
@@ -53,15 +58,6 @@ function draw(canvas, ctx, dir) {
     };
     //newHead wird zur Schlange hinzugefügt
     snake.unshift(newHead);
-
-
-    if (snakeX < box || snakeY < box || snakeX > (canvasSize - 1) * box || snakeY > (canvasSize - 1) * box
-        || collsion(newHead, snake)) {
-      clearInterval(game);
-    }
-
-
-    points += snakeOver(snake[0].x, snake[0].y, canvas, ctx, box);
-  //  document.getElementById("info").innerText = "Points: " + points;
-}
+    darwUserScore(snakeOver(snake[0].x, snake[0].y, canvas, ctx, box),snake.length);
+};
 

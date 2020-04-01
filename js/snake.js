@@ -9,23 +9,27 @@ document.addEventListener("DOMContentLoaded", function (event) {
     //  variables for game status
     let gameRunning = false;
     let gameFinished = false;
+    let interValTimer = 50;                // timeinterval for the game
 
     let canvas = document.getElementById('field');
 
-    let interValTimer = 600;                // timeinterval for the game
     if (canvas.getContext) {              // check if supports drawing
         let ctx = canvas.getContext("2d");   // set canvas to be a 2d objekt
         // optional
         //ctx.canvas.width = window.innerHeight; // sets the canvas to the interior width of the window pixel
         //ctx.canvas.height = window.innerHeight; // sets the canvas to the interio height of the window pixel
 
+        function setGameStatus(){
+            if(gameRunning == true){
+                gameRunning = false;
+                clear
+            }
+        }
 
         setInterval(function game() {
-
             draw(canvas, ctx, dir);                //call of the background
-            createNewCircle(canvas, ctx);
-            //createNewCircle(canvas,ctx);     // call of the circles (apples)
-        }, 100);
+            createNewCircle(canvas, ctx);           // call of the circles (apples)
+        }, interValTimer);
 
     } else {
         // Canvas wird nicht unterstützt
