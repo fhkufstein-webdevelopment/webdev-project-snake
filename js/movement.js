@@ -24,10 +24,18 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
+function bonusStageTest(){
+    var letter = '0123456789ABCDEF';
+    var color = '#';
+    for(var i = 0; i < 6; i++){
+        color += letter[Math.floor(Math.random()*16)];
+    }
+    return color;
+}
 
 function draw(canvas, ctx) {
     //Hintergrund malen
-    ctx.fillStyle = "#9ac40a";
+    ctx.fillStyle = createRandomColor();
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     //Schlangenkopf malen sowie weitere Glieder hinzufügen
     for (let i = 0; i < snake.length; i++) {
