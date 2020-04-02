@@ -11,7 +11,7 @@ class GameController extends Controller
 
 	public function run()
 	{
-        $this->view->title = "Game";
+        $this->view->title = "SNAKE";
 		$this->view->username = $this->user->username;
 
         $this->checkForSaveScorePost();
@@ -21,7 +21,7 @@ class GameController extends Controller
     {
         if(isset($_POST['action']) && $_POST['action'] == 'saveScore')
         {
-            echo "GameController started";
+
             $score = $_POST['score'];
             $user = $this->user->username;
 

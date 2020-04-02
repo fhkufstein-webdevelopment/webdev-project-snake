@@ -12,10 +12,10 @@
     }
 });*/
 
-let userPoints = 0;
+
 function darwUserScore(scoreToAdd,snakeLenght) {
-    userPoints += scoreToAdd;
-    document.getElementById("points").innerText = userPoints; // upate points
+    userScore += scoreToAdd;
+    document.getElementById("points").innerText = userScore; // upate points
     document.getElementById("animals").innerText = snakeLenght; // update lenght
 }
 
