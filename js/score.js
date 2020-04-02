@@ -4,25 +4,18 @@
     so the following line would be
     $(document).ready(function() {
 */
-/*jQuery(document).ready(function() {
-
-    // if variable gameFinished is set true then save score
-    if (gameFinished){
-        saveScore(userScore);
-    }
-});*/
 
 
-function darwUserScore(scoreToAdd,snakeLenght) {
+
+function drawUserScore(scoreToAdd, snakeLenght) {
     userScore += scoreToAdd;
     document.getElementById("points").innerText = userScore; // upate points
     document.getElementById("animals").innerText = snakeLenght; // update lenght
 }
 
-function showScoreGlobal() {
-    alert("Zeigt die Bestenliste");
+function showGameFinishedDialog() {
+    alert("Zeigt den Bildschirm mit Auswahlmöglichkeiten, neues Spiel, Spiel beenden, Highscoreliste ansehen");
 }
-
 
 function saveScore(userScore,gameStatus) {
 
@@ -34,10 +27,10 @@ function saveScore(userScore,gameStatus) {
             'success': function (receivedData) {
                 if (receivedData.result) {
                     //
-                    location.reload(); // reopens the game
+
                 }
             }
         });
-        console.log("saveScore done");
+
     }
 }

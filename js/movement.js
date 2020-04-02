@@ -67,6 +67,6 @@ function draw(canvas, ctx) {
     };
     //newHead wird zur Schlange hinzugefügt
     snake.unshift(newHead);
-    darwUserScore(snakeOver(snake[0].x, snake[0].y, canvas, ctx, box),snake.length);
+    drawUserScore(snakeOver(snake[0].x, snake[0].y, canvas, ctx, box),snake.length);
 };
 
