@@ -15,6 +15,13 @@ echo $this->header;
             </section>
             <section class="ol score"></section>
             <section class="ol user"></section>
+            <section id="ol manual" class="ol manual">
+                        <img id="arrows" src="/additional-files/images/arrowKeys.png">
+                        <p>Richtung der Schlange bestimmen</p>
+                        <img id="p" src="/additional-files/images/P.png">
+                        <p>Spiel pausieren</p>
+                        <button onclick="closeManual()" id="start">Spiel beginnen</button>
+            </section>
         </main>
         <nav>
             <button role="button" aria-label="Score">Score</button>
@@ -25,7 +32,7 @@ echo $this->header;
                 <button role="button" aria-label="User"><?php echo $this->username; ?></button>
             <?php endif; ?>
         </nav>
-        <button class="question" role="button" aria-label="Manual" id="manual">?</button>
+        <button onclick="openManual()" id="manual" class="question" role="button" aria-label="Manual">?</button>
     </div>
 
 <?php
