@@ -46,17 +46,17 @@ oder mit Compass CLI:
 compass watch
 ```
 
-## Built With
+## Technologien
 
 * [PHP](https://www.php.net/) - Hypertext Preprocessor
 * [phpMyAdmin](https://www.phpmyadmin.net/) - Bringing MySQL to the web
 * [jQuery](https://jquery.com/) - The Write Less, Do More, JavaScript Library
 
-## Authors
+## Autoren
 
 * Fabian Schmiederer - [Aggregrant](https://github.com/Aggregrant)
 * Felix Mayr - [felixmayr](https://github.com/felixmayr)
 * Georg Trebo - [5KR34D3R](https://github.com/5KR34D3R)
-* Hannes Sachsenmaier - [PurpleBooth](https://github.com/HannesSachsenmaier)
+* Hannes Sachsenmaier - [HannesSachsenmaier](https://github.com/HannesSachsenmaier)
 
 Basisprojekt von Herr Professor Daniel Hoover - [danielhoover](https://github.com/danielhoover)
