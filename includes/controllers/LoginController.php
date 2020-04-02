@@ -5,7 +5,7 @@
  */
 class LoginController extends Controller
 {
-    protected $viewFileName = "Login";
+    protected $viewFileName = "login";
     protected $loginRequired = false;
 
     public function run()
