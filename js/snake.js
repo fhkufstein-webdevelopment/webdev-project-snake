@@ -15,9 +15,11 @@ document.addEventListener("DOMContentLoaded", function (event) {
         alert("Fehler! Canvas wird von diesem Browser nicht unterstützt! Bitte wechseln Sie zu einem anderem Browser");
     }
 
-    document.getElementById("manual").addEventListener("click",function () {
+    document.getElementById("ol manual").addEventListener("click",function () {
         checkGameStatus();
-        alert("Zeigt Overlay mit Info wie das Spiel gespielt wird.")
+        openManual();
+
+
     });
 });
 

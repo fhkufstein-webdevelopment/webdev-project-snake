@@ -80,8 +80,14 @@ nav {
     left: 0;
     transform: translateX(100%);
   }
+
+  &.manual {
+    left: 0;
+    transform: translateX(100%);
+  }
 }
 
 .question {
   margin-top: 8vh;
 }
+
