@@ -11,7 +11,7 @@ class GameController extends Controller
 
 	public function run()
 	{
-        $this->view->title = "SNAKE";
+        $this->view->title = "Game";
 		$this->view->username = $this->user->username;
 
         $this->checkForSaveScorePost();

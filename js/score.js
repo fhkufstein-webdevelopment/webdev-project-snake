@@ -1,11 +1,8 @@
-
 /*  there are other libraries that could use "$" - so it is 100% save to use "jQuery" instead of "$"
     if you don't use any other libraries than jQuery you could still go with "$"
     so the following line would be
     $(document).ready(function() {
 */
-
-
 
 function drawUserScore(scoreToAdd, snakeLenght) {
     userScore += scoreToAdd;
@@ -20,17 +17,15 @@ function showGameFinishedDialog() {
 function saveScore(userScore,gameStatus) {
 
     if (gameStatus) {
-        $.ajax({
-            'url': 'index',
-            'method': 'post',
-            'data': {'action': 'saveScore', 'score': userScore},
-            'success': function (receivedData) {
-                if (receivedData.result) {
-                    //
-
-                }
-            }
-        });
-
+        fetch('index', {
+            method: 'post',
+            headers: {
+                'Accept': 'application/json',
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "score=" + userScore + "&action=saveScore"
+        })
+            .then(res => res.json())
+            .then(res => console.log(res))
     }
 }
