@@ -1,102 +1,87 @@
-/*  there are other libraries that could use "$" - so it is 100% save to use "jQuery" instead of "$"
- if you don't use any other libraries than jQuery you could still go with "$"
- so the following line would be
- $(document).ready(function() {
- */
-jQuery(document).ready(function() {
-  let registerModal = $("#registerModal");
-  let login = $(".login");
-  let popUp = $("#registerModal .popup");
-  let popUpText = $("#registerModal .popup h1");
+document.addEventListener("DOMContentLoaded", function () {
+    let login = document.querySelector(".login");
+    let registerModalToggles = document.querySelectorAll(".login-page .toggle");
+    let registerModal = document.querySelector(".register-modal");
+    let registerForm = registerModal.querySelector("#register-form");
+    let registerFormFields = registerForm.querySelectorAll("input");
+    let registerPopUp = registerModal.querySelector(".popup");
+    let registerAlert = registerModal.querySelector(".alert");
 
-  $(".close").click(function(e) {
-    e.preventDefault();
+    // Fügt zu beiden Trigger (hier registrieren/Abbrechen) den selben Event Listener hinzu
+    registerModalToggles.forEach(toggle => {
+        toggle.addEventListener("click", evt => {
+            evt.preventDefault();
 
-    registerModal.toggleClass("active");
-    login.toggleClass("active");
-  });
+            registerModal.classList.toggle("active");
+            login.classList.toggle("active");
+        });
+    });
 
-  $("#register").click(function(e) {
-    e.preventDefault();
+    // Event Listener für Form Submit
+    registerForm.addEventListener("submit", evt => {
+            evt.preventDefault();
 
-    registerModal.toggleClass("active");
-    login.toggleClass("active");
-  });
+            let validUN = false;
+            let validPW = false;
+            let un = "";
+            let pw = "";
 
-  //this is that we are able to trigger a submit although a button was clicked outside of your form!
-  registerModal.find(".register").click(function() {
-    registerModal.find("form").trigger("submit", [this]);
-  });
+            // Checkt alle Input Felder in einer ForEach Schleife
+            registerFormFields.forEach(field => {
+                let fieldText = field.value; // Speichert Input Text als Variable
+                let passwordField = field.getAttribute('id').includes("pwd"); // Boolean checkt HTML ID
 
-  //so we have some input fields
-  registerModal.find("form").bind("submit", function(e, that) {
-    e.preventDefault();
+                if (passwordField) {
+                    if (pw === "" && fieldText.length > 8) { // Erstes PW wird gespeichert falls länger als 8 Zeichen
+                        pw = fieldText;
+                    } else if (fieldText === pw && pw !== "") { // Zweites PW wird verglichen
+                        validPW = true;
+                    }
+                } else if (fieldText.length !== 0) { // Hier kommt nur noch der Name an da PW oben ins If gehen
+                    validUN = true;
+                    un = fieldText;
+                }
+            });
 
-    registerModal.find(".register").prop("disabled", true); //prevent sending the formular again while we check it
+            // Checkt alle gesammelten Werte ab und fügt dementsprechend Klassen und Listeneres hinzu
+            registerFormFields.forEach(field => {
+                let passwordField = field.getAttribute('id').includes("pwd");
+                let userField = field.getAttribute('id').includes("name");
 
-    hasError = false; //we are positive...
+                if (passwordField && !validPW || userField && !validUN) {
+                    field.classList.add("error");
+                    field.addEventListener("keydown", () => {
+                        field.classList.remove("error");
+                        field.removeEventListener("keydown", null);
+                    });
+                } else {
+                    field.classList.remove("error");
+                }
+            });
 
-    if (typeof that === "undefined") {
-      that = registerModal.find(".register").get(0);
-    }
+            // HTTP POST Method wenn Benutzername und Passwort passen
+            if (validUN && validPW) {
+                fetch('login', {
+                    method: 'post',
+                    headers: {
+                        'Accept': 'application/json',
+                        "Content-Type": "application/x-www-form-urlencoded"
+                    },
+                    body: "name=" + un + "&pwd=" + pw + "&action=register"
+                })
+                    .then(res => res.json())
+                    .then(res => {
+                        if (res.result) {
+                            registerPopUp.classList.add("success");
 
-    var nonEmptyFields = ["#name", "#pwd", "#pwd2"];
-
-    for (i = 0; i < nonEmptyFields.length; i++) {
-      if ($(nonEmptyFields[i]).val() == "") {
-        hasError = true;
-        $(nonEmptyFields[i])
-          .closest(".form-group")
-          .addClass("has-error");
-      }
-    }
-
-    if (!hasError) {
-      //check if pwd is long enough...
-      if ($("#pwd").val().length < 8) {
-        $("#pwd")
-          .closest(".form-group")
-          .addClass("has-error");
-        hasError = true;
-      } else {
-        if ($("#pwd").val() != $("#pwd2").val()) {
-          $("#pwd2")
-            .closest(".form-group")
-            .addClass("has-error");
-          hasError = true;
-          registerModal.find(".register").prop("disabled", false);
-        } else {
-          //everything fine
-
-          $.ajax({
-            url: $(this).attr("action"),
-            method: $(this).attr("method"),
-            data: $(this).serialize(),
-            dataType: "json",
-            success: function(receivedData) {
-              if (receivedData.result) {
-                popUp.addClass("success");
-
-                window.setTimeout(function() {
-                  location.reload();
-                }, 2500);
-              } else {
-                registerModal.find(".form-group").removeClass("has-error");
-
-                $.each(receivedData.data.errorFields, function(key, value) {
-                  $("#" + key)
-                    .closest(".form-group")
-                    .addClass("has-error");
-                });
-              }
-
-              registerModal.find(".register").prop("disabled", false);
+                            window.setTimeout(function () {
+                                location.reload();
+                            }, 2000);
+                        } else {
+                            registerAlert.classList.remove("hidden");
+                        }
+                    });
             }
-          });
         }
-      }
-    }
-
-    registerModal.find(".register").prop("disabled", false);
-  });
+    );
 });

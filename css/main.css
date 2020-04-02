@@ -169,18 +169,13 @@ nav::before {
   cursor: pointer;
 }
 /* line 19, ../scss/_login.scss */
-.login-page .login {
-  opacity: 0;
-  pointer-events: none;
-}
-/* line 24, ../scss/_login.scss */
 .login-page form {
   display: flex;
   flex-direction: column;
   max-width: 300px;
   margin: 0 auto;
 }
-/* line 30, ../scss/_login.scss */
+/* line 25, ../scss/_login.scss */
 .login-page form input {
   margin-bottom: 1rem;
   padding: 6px;
@@ -188,34 +183,51 @@ nav::before {
   color: inherit;
   border: 3px solid #192d00;
 }
-/* line 37, ../scss/_login.scss */
+/* line 32, ../scss/_login.scss */
 .login-page form input:focus {
   outline: 2px solid #192d00;
   outline-offset: 2px;
 }
-/* line 43, ../scss/_login.scss */
+/* line 39, ../scss/_login.scss */
+.login-page form#register-form input.error {
+  border-color: darkred;
+}
+/* line 42, ../scss/_login.scss */
+.login-page form#register-form input.error:focus {
+  outline-color: darkred;
+}
+/* line 48, ../scss/_login.scss */
 .login-page form ::placeholder {
   color: rgba(0, 0, 0, 0.6);
 }
-/* line 48, ../scss/_login.scss */
+/* line 53, ../scss/_login.scss */
 .login-page .alert {
   margin-top: 2rem;
   color: darkred;
 }
-/* line 53, ../scss/_login.scss */
-.login-page .modal {
+/* line 57, ../scss/_login.scss */
+.login-page .alert.hidden {
+  display: none;
+}
+/* line 63, ../scss/_login.scss */
+.login-page .login {
+  opacity: 0;
+  pointer-events: none;
+}
+/* line 68, ../scss/_login.scss */
+.login-page .register-modal {
   position: absolute;
   top: 0;
   left: 0;
   opacity: 0;
   pointer-events: none;
 }
-/* line 61, ../scss/_login.scss */
+/* line 76, ../scss/_login.scss */
 .login-page .active {
   opacity: 1;
   pointer-events: all;
 }
-/* line 66, ../scss/_login.scss */
+/* line 81, ../scss/_login.scss */
 .login-page .popup {
   position: absolute;
   top: 0;
@@ -230,7 +242,7 @@ nav::before {
   opacity: 0;
   pointer-events: none;
 }
-/* line 80, ../scss/_login.scss */
+/* line 95, ../scss/_login.scss */
 .login-page .popup.success {
   opacity: 1;
 }

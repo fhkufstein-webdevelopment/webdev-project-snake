@@ -9,7 +9,7 @@ echo $this->header;
                 <h2 class="title">Login</h2>
                 <p class="intro">
                     Melden Sie sich bitte an um den Dienst nutzen zu können.<br>Sie besitzen noch keinen Account?<br>Dann
-                    können Sie sich <span id="register">hier registrieren</span>.
+                    können Sie sich <span class="toggle">hier registrieren</span>.
                 </p>
                 <?php if ($this->errorPasswd == true): ?>
                     <div class="alert" role="alert">
@@ -28,7 +28,8 @@ echo $this->header;
             </form>
         </section>
 
-        <section class="modal<?php if ($registerError): ?>active<?php endif; ?>" id="registerModal" tabindex="-1" role="dialog" aria-labelledby="registerModalLabel">
+        <section class="register-modal" tabindex="-1"
+                 role="dialog" aria-labelledby="registerModalLabel">
             <div class="popup">
                 <h2>Erfolgreiche Registrierung!</h2>
             </div>
@@ -37,16 +38,17 @@ echo $this->header;
                 <p class="intro">
                     Wir benötigen folgende Angaben um Sie für unseren Dienst registrieren zu können:
                 </p>
+                <div class="alert hidden" role="alert">
+                    <h4>Benutzernamebereits vergeben!</h4>
+                    <p>Bitte versuchen Sie einen anderen.</p>
+                </div>
             </header>
-            <form method="post" action="login" class="col-xs-12">
-                <input type="text" class="form-control" name="name" id="name" placeholder="Benutzernamen eingeben">
-                <input type="password" name="pwd" class="form-control" id="pwd"
-                       placeholder="Bitte Passwort eingeben (mind. 8 Zeichen)">
-                <input type="password" name="pwd2" class="form-control" id="pwd2"
-                       placeholder="Bitte das Passwort wiederholen">
-                <input type="hidden" name="action" value="register">
-                <button type="button" class="register">Registrieren</button>
-                <button type="button" class="close">Abbrechen</button>
+            <form method="post" id="register-form">
+                <input type="text" name="name" id="name" placeholder="Benutzernamen eingeben">
+                <input type="password" name="pwd" id="pwd1" placeholder="Bitte Passwort eingeben (mind. 8 Zeichen)">
+                <input type="password" name="pwd2" id="pwd2" placeholder="Bitte das Passwort wiederholen">
+                <button type="submit" class="register">Registrieren</button>
+                <button type="button" class="toggle">Abbrechen</button>
             </form>
         </section>
     </main>
