@@ -21,6 +21,7 @@ class GameController extends Controller
     {
         if(isset($_POST['action']) && $_POST['action'] == 'saveScore')
         {
+            echo "GameController started";
             $score = $_POST['score'];
             $user = $this->user->username;
 
@@ -32,6 +33,7 @@ class GameController extends Controller
             $jsonResponse->result = true; //this is important, as the frontend expects result true if everything was ok
             $jsonResponse->setMessage("Saved the values!"); //(optional)
             $jsonResponse->send();
+
         }
     }
 

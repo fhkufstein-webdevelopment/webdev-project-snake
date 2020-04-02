@@ -4,13 +4,13 @@
     so the following line would be
     $(document).ready(function() {
 */
-jQuery(document).ready(function() {
+/*jQuery(document).ready(function() {
 
     // if variable gameFinished is set true then save score
     if (gameFinished){
         saveScore(userScore);
     }
-});
+});*/
 
 let userPoints = 0;
 function darwUserScore(scoreToAdd,snakeLenght) {
@@ -24,17 +24,20 @@ function showScoreGlobal() {
 }
 
 
-function saveScore(userScore) {
+function saveScore(userScore,gameStatus) {
 
-    $.ajax({
-        'url': 'index',
-        'method': 'post',
-        'data': {'action': 'saveScore', 'score': userScore},
-        'success': function (receivedData) {
-            if (receivedData.result) {
-                //after save change url to scoreboard
-                //location.href = 'scoreboard'; mit overlay austauschen
+    if (gameStatus) {
+        $.ajax({
+            'url': 'index',
+            'method': 'post',
+            'data': {'action': 'saveScore', 'score': userScore},
+            'success': function (receivedData) {
+                if (receivedData.result) {
+                    //
+                    location.reload(); // reopens the game
+                }
             }
-        }
-    });
+        });
+        console.log("saveScore done");
+    }
 }

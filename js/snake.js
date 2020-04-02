@@ -1,6 +1,6 @@
 //  variables for game status
 let gameRunning = true;
-let gameFinished = false; // if gameFinished true -> send score to database
+let gameFinished = false;           // if gameFinished true -> send score to database
 let userScore = 0;
 let interValTimer = 50;                // timeinterval for the game
 
@@ -28,8 +28,9 @@ let gameRun = function game() {             // variable with function that calls
 let intervalGame = setInterval(gameRun,interValTimer);  // set interval to the variable gameRun with function
 
 function checkGameStatus(endGame) {                              // check for gameStastus // status is only used in collision
-    if (endGame == true){                                  // check if the status endGame is true and prozeed to make the finish screen
-        gameFinished = true;                                   // set the gamefinished status to the endGame status
+    if (endGame == true){                                       // check if the status endGame is true and prozeed to make the finish screen
+        gameFinished = true;                                    // set the gamefinished status to the endGame status
+        saveScore(userScore,gameFinished);                      // calls method to save score after game is finished
         clearInterval(intervalGame);                            // clear the interval of the game mechanics
     }else if(gameRunning == true && gameFinished == false){           // check if game is running and if game is not finished and then set the game to stop
         clearInterval(intervalGame);                            // clear the interval of the game = stop the game
