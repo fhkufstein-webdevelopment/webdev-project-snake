@@ -22,14 +22,10 @@ class GameController extends Controller
         if(isset($_POST['action']) && $_POST['action'] == 'saveScore')
         {
             $score = $_POST['score'];
-            $userid = $this->user->id;
+            $user = $this->user->username;
 
             //now we need our Model to save the values
-            ScoreModel::createNewScore($userid,$score); //:: ist only working when we define a Method as static. That means one can use the method without instanciating an object
-            //normally we would first make a new object like so:
-            //$gameObj = new GameModel();
-            //$gameObj->saveScoreAndAttempts($userid, $score, $attempts);
-            //but if a method is defined as static - it can be used directly like a function
+            ScoreModel::createNewScore($user,$score); //:: ist only working when we define a Method as static. That means one can use the method without instanciating an object
 
             //finally send a JSON message that we saved the values...
             $jsonResponse = new JSON();

@@ -2,12 +2,12 @@
 
 class ScoreModel
 {
-	public static function getHighscoreFromUser($id)
+	public static function getHighscoreFromUser($user)
 	{
 		$db = new Database();
 
         //returns the highest score of the current user. Should be visible during the game
-		$sql = "SELECT max(score) FROM highscore WHERE user_id=".intval($id);
+		$sql = "SELECT max(score) FROM highscore WHERE user=".intval($user);
 
 		$result = $db->query($sql);
 
@@ -58,30 +58,20 @@ class ScoreModel
         return null;
     }
 
-	public static function createNewScore($userID,$score)
+	public static function createNewScore($user,$score)
 	{
 		$db = new Database();
 
-        $userid = $db->escapeString($userID);
+        $user = $db->escapeString($user);
         $score = $db->escapeString($score);
 
 
-		$sql = "INSERT INTO highscore (`score`,`user_id`) VALUES('\".$userid.\"','\".$score.\"')";
+		$sql = "INSERT INTO highscore (`score`,`user_id`) VALUES('\".$user.\"','\".$score.\"')";
 		$db->query($sql);
 
-		/*$data['id'] = $db->insertId();
 
-		return (object) $data;*/
+
 	}
 
-	/*public static function saveAddress($data)
-	{
-		$db = new Database();
-
-		$sql = "UPDATE address SET firstname='".$db->escapeString($data['firstname'])."',lastname='".$db->escapeString($data['lastname'])."',street='".$db->escapeString($data['street'])."',zip='".$db->escapeString($data['zip'])."',city='".$db->escapeString($data['city'])."' WHERE id=".intval($data['id']);
-		$db->query($sql);
-
-		return (object) $data;
-	}*/
 
 }
