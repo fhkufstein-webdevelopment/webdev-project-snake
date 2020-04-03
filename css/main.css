@@ -363,18 +363,22 @@ button {
   padding: 4px;
 }
 /* line 53, ../scss/main.scss */
+button[role=button]:hover {
+  cursor: pointer;
+}
+/* line 57, ../scss/main.scss */
 button:focus {
   outline: 2px solid #192d00;
 }
 
 /* Media Queries */
 @media (min-width: 660px) {
-  /* line 62, ../scss/main.scss */
+  /* line 66, ../scss/main.scss */
   html {
     font-size: 16px;
   }
 
-  /* line 66, ../scss/main.scss */
+  /* line 70, ../scss/main.scss */
   body {
     margin: 0 auto;
   }

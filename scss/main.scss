@@ -50,6 +50,10 @@ button {
   margin: 0 auto;
   padding: 4px;
 
+  &[role=button]:hover {
+    cursor:pointer;
+  }
+
   &:focus {
     outline: 2px solid $darkgreen;
   }
