@@ -178,11 +178,50 @@ nav::before {
 /* line 110, ../scss/_index.scss */
 .overlay-content {
   position: relative;
-  top: 25%;
+  top: 5%;
   width: 100%;
   text-align: center;
-  margin-top: 30px;
   color: white;
+}
+
+/* line 118, ../scss/_index.scss */
+.button {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  line-height: 90px;
+  background: grey;
+  color: black;
+  font-size: 45px;
+  border: 10px solid dimgrey;
+  display: inline-block;
+  margin: 5px -2.5px 20px -2.5px;
+}
+
+/* line 131, ../scss/_index.scss */
+.p {
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+/* line 136, ../scss/_index.scss */
+.start {
+  border: 10px solid dimgrey;
+  background: grey;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+/* line 143, ../scss/_index.scss */
+.up {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+/* line 148, ../scss/_index.scss */
+h1 {
+  font-size: 20px;
+  margin-bottom: 40px;
 }
 
 /* line 1, ../scss/_login.scss */

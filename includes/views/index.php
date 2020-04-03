@@ -16,13 +16,16 @@ echo $this->header;
         <section class="ol user"></section>
         <section id="overlay" class="overlay">
             <div class="overlay-content">
-                <img id="arrows" src="images/arrowKeys.png" alt="Pfeiltasten">
-                <p>Richtung der Schlange bestimmen</p>
-                <img id="p" src="images/P.png" alt="P-Taste">
-                <p>Spiel pausieren</p>
-                <br><br>
-                <button onclick="closeManual()">Spiel beginnen</button>
-            </div>
+                <h1>Steuerung</h1>
+                    <div class="up button"> &uarr;</div>
+                    <br/>
+                    <div class="left button">&larr;</div>
+                    <div class="down button">&darr;</div>
+                    <div class="right button">&rarr;</div>
+                    <p>Richtung der Schlange bestimmen</p>
+                    <div class="p button">P<i class="fa fa-arrow-right"></i></div>
+                    <p>Spiel pausieren</p>
+                <button onclick="closeManual()" class="start">Spiel beginnen</button>
         </section>
     </main>
     <nav class="sizer">

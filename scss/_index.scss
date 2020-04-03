@@ -98,7 +98,7 @@ nav {
   top: 0;
   left: 0;
   background-color: red;
-  background-color: rgba(255,0,0, 0.9);
+  background-color: rgba(255, 0, 0, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
 
@@ -109,9 +109,43 @@ nav {
 
 .overlay-content {
   position: relative;
-  top: 25%;
+  top: 5%;
   width: 100%;
   text-align: center;
-  margin-top: 30px;
   color: white;
+}
+
+.button {
+  width: 90px;
+  height: 90px;
+  text-align: center;
+  line-height: 90px;
+  background: grey;
+  color: black;
+  font-size: 45px;
+  border: 10px solid dimgrey;
+  display: inline-block;
+  margin: 5px -2.5px 20px -2.5px;
+}
+
+.p {
+  margin-top: 80px;
+  margin-bottom: 20px;
+}
+
+.start {
+  border: 10px solid dimgrey;
+  background: grey;
+  margin-top: 50px;
+  cursor: pointer;
+}
+
+.up {
+  position: relative;
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-size: 20px;
+  margin-bottom: 40px;
 }
