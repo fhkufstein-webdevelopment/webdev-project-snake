@@ -36,9 +36,11 @@ function checkGameStatus(endGame) {                              // check for ga
         clearInterval(intervalGame);                            // clear the interval of the game mechanics
     }else if(gameRunning == true && gameFinished == false){           // check if game is running and if game is not finished and then set the game to stop
         clearInterval(intervalGame);                            // clear the interval of the game = stop the game
+        document.getElementById("pause").style.color = "#192d00"; //makes Game Paused visible
         gameRunning = false;                                    // set the game to status stop
     }else if (gameRunning == false && gameFinished == false){   // check if the games i not running and game is not finished then set the game to running again
         intervalGame = setInterval(gameRun,interValTimer);      // create a new interval for the game functions with timer which is set at the top
+        document.getElementById("pause").style.color = "#9ac40a"; //makes Game Paused visible
         gameRunning = true;                                     // set game to status running again
     }
 }

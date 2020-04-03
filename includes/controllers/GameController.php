@@ -9,6 +9,8 @@ class GameController extends Controller
 	protected $loginRequired = true;
 
 
+
+
 	public function run()
 	{
         $this->view->title = "Game";

@@ -11,6 +11,11 @@ canvas {
     justify-content: space-between;
     margin-bottom: 18px;
 
+    .pause {
+      color: $green;
+      font-size: 150%;
+    }
+
     &::after {
       position: absolute;
       left: 0;

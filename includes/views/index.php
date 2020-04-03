@@ -7,6 +7,7 @@ echo $this->header;
         <section class="game">
             <div class="score">
                 <p class="points" id="points">0129</p>
+                <p class="pause" id="pause">Game Paused</p>
                 <p class="animals" id="animals">12</p>
             </div>
             <canvas id="field" class="sizer" width="600" height="600"></canvas>

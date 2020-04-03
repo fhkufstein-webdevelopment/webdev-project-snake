@@ -79,6 +79,11 @@ canvas {
   margin-bottom: 18px;
 }
 /* line 14, ../scss/_index.scss */
+.game .score .pause {
+  color: #9ac40a;
+  font-size: 150%;
+}
+/* line 19, ../scss/_index.scss */
 .game .score::after {
   position: absolute;
   left: 0;
@@ -90,7 +95,7 @@ canvas {
   background-color: #192d00;
 }
 
-/* line 27, ../scss/_index.scss */
+/* line 32, ../scss/_index.scss */
 nav {
   position: relative;
   display: flex;
@@ -99,19 +104,19 @@ nav {
   color: #000;
   margin-top: 10px;
 }
-/* line 35, ../scss/_index.scss */
+/* line 40, ../scss/_index.scss */
 nav button {
   margin: 0;
 }
-/* line 38, ../scss/_index.scss */
+/* line 43, ../scss/_index.scss */
 nav button:first-of-type {
   transform: translateX(-6px);
 }
-/* line 42, ../scss/_index.scss */
+/* line 47, ../scss/_index.scss */
 nav button:last-of-type {
   transform: translateX(6px);
 }
-/* line 47, ../scss/_index.scss */
+/* line 52, ../scss/_index.scss */
 nav::before {
   position: absolute;
   left: 0;
@@ -123,7 +128,7 @@ nav::before {
   background-color: #192d00;
 }
 
-/* line 59, ../scss/_index.scss */
+/* line 64, ../scss/_index.scss */
 .ol {
   position: fixed;
   top: 0;
@@ -131,28 +136,28 @@ nav::before {
   height: 100%;
   background-color: red;
 }
-/* line 67, ../scss/_index.scss */
+/* line 72, ../scss/_index.scss */
 .ol.score {
   left: 0;
   transform: translateX(-100%);
 }
-/* line 72, ../scss/_index.scss */
+/* line 77, ../scss/_index.scss */
 .ol.user {
   left: 0;
   transform: translateX(100%);
 }
-/* line 77, ../scss/_index.scss */
+/* line 82, ../scss/_index.scss */
 .ol.manual {
   left: 0;
   transform: translateX(100%);
 }
 
-/* line 83, ../scss/_index.scss */
+/* line 88, ../scss/_index.scss */
 .question {
   margin-top: 8vh;
 }
 
-/* line 88, ../scss/_index.scss */
+/* line 93, ../scss/_index.scss */
 .overlay {
   height: 100%;
   width: 0;
@@ -165,8 +170,12 @@ nav::before {
   overflow-x: hidden;
   transition: 0.5s;
 }
+/* line 105, ../scss/_index.scss */
+.overlay.open {
+  width: 100%;
+}
 
-/* line 101, ../scss/_index.scss */
+/* line 110, ../scss/_index.scss */
 .overlay-content {
   position: relative;
   top: 25%;

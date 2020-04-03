@@ -20,6 +20,8 @@ document.addEventListener("keydown", function (event) {
         dir = "DOWN";
     }else if (event.keyCode === 80){
         checkGameStatus();
+
+
     }
 });
 
