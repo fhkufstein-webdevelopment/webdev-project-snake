@@ -25,9 +25,9 @@ function checkInnerCollision(headX,headY,partX,partY,i,box){
         let xyDistance = Math.sqrt(Math.pow(xDistance,2)+ Math.pow(yDistance,2)); // squareroot of (xdifference times 2) + (ydifference times 2)
 
         if(xyDistance <= box-1 && xyDistance >= 0){    // check if the xyDistance is between 0 and the box size of the elemnts -1 because if you the full pox there would collide
-            alert("Game Over");
-            checkGameStatus(true);
+
             showGameFinishedDialog();
+            checkGameStatus(true);
         }
     }
 }
