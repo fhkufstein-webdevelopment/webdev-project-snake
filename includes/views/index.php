@@ -15,9 +15,9 @@ echo $this->header;
         <section class="ol user"></section>
         <section id="overlay" class="overlay">
             <div class="overlay-content">
-                <img id="arrows" src="/images/arrowKeys.png" alt="Pfeiltasten">
+                <img id="arrows" src="images/arrowKeys.png" alt="Pfeiltasten">
                 <p>Richtung der Schlange bestimmen</p>
-                <img id="p" src="/images/P.png" alt="P-Taste">
+                <img id="p" src="images/P.png" alt="P-Taste">
                 <p>Spiel pausieren</p>
                 <br><br>
                 <button onclick="closeManual()">Spiel beginnen</button>

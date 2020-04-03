@@ -96,6 +96,10 @@ nav {
   background-color: rgba(255,0,0, 0.9);
   overflow-x: hidden;
   transition: 0.5s;
+
+  &.open {
+    width: 100%;
+  }
 }
 
 .overlay-content {
