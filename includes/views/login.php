@@ -8,8 +8,7 @@ echo $this->header;
             <header>
                 <h2 class="title">Login</h2>
                 <p class="intro">
-                    Melden Sie sich bitte an um den Dienst nutzen zu können.<br>Sie besitzen noch keinen Account?<br>Dann
-                    können Sie sich <span class="toggle">hier registrieren</span>.
+                    Kein Account?<br>Dann können Sie sich <span class="toggle">hier registrieren</span>.
                 </p>
                 <?php if ($this->errorPasswd == true): ?>
                     <div class="alert" role="alert">
@@ -36,7 +35,7 @@ echo $this->header;
             <header>
                 <h2 class="title">Registrierung</h2>
                 <p class="intro">
-                    Wir benötigen folgende Angaben um Sie für unseren Dienst registrieren zu können:
+                    Bitte füllen Sie folgende Felder aus um einen Account anzulegen:
                 </p>
                 <div class="alert hidden" role="alert">
                     <h4>Benutzernamebereits vergeben!</h4>

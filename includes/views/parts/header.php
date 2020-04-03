@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <title>SNAKE - <?php echo $this->title; ?></title>
+    <title>SNAKE - <?php echo ($this->title == "") ? "404" : $this->title ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"/>
@@ -32,7 +32,7 @@
 
 </head>
 <body>
-<div class="wrapper">
-    <header>
+
+    <header class="logo">
         <h1>SNAKE</h1>
     </header>

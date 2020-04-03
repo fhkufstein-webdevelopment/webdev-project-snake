@@ -5,6 +5,7 @@
 @import "index";
 @import "login";
 @import "logout";
+@import "404";
 
 html {
   background-color: $green;
@@ -16,22 +17,29 @@ html {
 body {
   height: 100vh;
   margin: 0 20px;
-  max-width: 660px;
   overflow: hidden;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
   line-height: 1.2rem;
+}
+
+header.logo {
+  text-align: center;
+  margin-bottom: 3rem;
+
+  h1 {
+    font-size: 3rem;
+  }
 }
 
 a, button {
   color: $darkgreen;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.sizer {
+  max-width: 500px;
 }
 
 button {
@@ -39,7 +47,14 @@ button {
   border: none;
   font-family: inherit;
   font-size: 1rem;
+  margin: 0 auto;
+  padding: 4px;
+
+  &:focus {
+    outline: 2px solid $darkgreen;
+  }
 }
+
 
 /* Media Queries */
 

@@ -3,6 +3,8 @@
   position: relative;
 
   header {
+    margin-bottom: 2rem;
+
     h2 {
       font-size: 1.2rem;
       margin-bottom: 2rem;
@@ -33,6 +35,10 @@
         outline: 2px solid $darkgreen;
         outline-offset: 2px;
       }
+    }
+
+    button {
+      margin-top: 1rem;
     }
 
     &#register-form {
