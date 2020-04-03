@@ -1,7 +1,7 @@
 function openManual() {
-    document.getElementById("ol manual").style.width = "100%";
+    document.getElementById("overlay").style.width = "100%";
 }
 
 function closeManual() {
-    document.getElementById("ol manual").style.width = "0%";
+    document.getElementById("overlay").style.width = "0%";
 }

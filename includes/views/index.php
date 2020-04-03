@@ -3,24 +3,25 @@
 echo $this->header;
 
 ?>
-
-
     <main>
         <section class="game">
             <div class="score">
                 <p class="points" id="points">0129</p>
                 <p class="animals" id="animals">12</p>
             </div>
-                <canvas id="field" class="sizer" width="600" height="600"></canvas>
+            <canvas id="field" class="sizer" width="600" height="600"></canvas>
         </section>
         <section class="ol score"></section>
         <section class="ol user"></section>
-        <section id="ol manual" class="ol manual">
-            <img id="arrows" src="/additional-files/images/arrowKeys.png">
-            <p>Richtung der Schlange bestimmen</p>
-            <img id="p" src="/additional-files/images/P.png">
-            <p>Spiel pausieren</p>
-            <button onclick="closeManual()" id="start">Spiel beginnen</button>
+        <section id="overlay" class="overlay">
+            <div class="overlay-content">
+                <img id="arrows" src="/images/arrowKeys.png" alt="Pfeiltasten">
+                <p>Richtung der Schlange bestimmen</p>
+                <img id="p" src="/images/P.png" alt="P-Taste">
+                <p>Spiel pausieren</p>
+                <br><br>
+                <button onclick="closeManual()">Spiel beginnen</button>
+            </div>
         </section>
     </main>
     <nav class="sizer">
