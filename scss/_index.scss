@@ -90,7 +90,7 @@ nav {
 }
 
 //Overlay-manual
-.overlay {
+ .overlay {
   height: 100%;
   width: 0;
   position: fixed;
@@ -103,13 +103,21 @@ nav {
   transition: 0.5s;
 
   &.open {
-    width: 100%;
-  }
+      width: 100%;
+    }
 }
 
-.overlay-content {
+.overlay-content-manual {
   position: relative;
   top: 5%;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+.overlay-content-finished {
+  position: relative;
+  top: 40%;
   width: 100%;
   text-align: center;
   color: white;

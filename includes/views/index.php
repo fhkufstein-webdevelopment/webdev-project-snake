@@ -14,18 +14,31 @@ echo $this->header;
         </section>
         <section class="ol score"></section>
         <section class="ol user"></section>
-        <section id="overlay" class="overlay">
-            <div class="overlay-content">
+        <section id="overlayManual" class="overlay">
+            <div class="overlay-content-manual">
                 <h1 class="overlay-h1">Steuerung</h1>
-                    <div class="up button"> &#8657;</div>
-                    <br/>
-                    <div class="left button">&#8656;</div>
-                    <div class="down button">&#8659;</div>
-                    <div class="right button">&#8658;</div>
-                    <p>Richtung der Schlange bestimmen</p>
-                    <div class="p button">P</div>
-                    <p>Spiel pausieren</p>
+                <div class="up button"> &#8657;</div>
+                <br/>
+                <div class="left button">&#8656;</div>
+                <div class="down button">&#8659;</div>
+                <div class="right button">&#8658;</div>
+                <p>Richtung der Schlange bestimmen</p>
+                <div class="p button">P</div>
+                <p>Spiel pausieren</p>
                 <button onclick="closeManual()" class="start">Spiel beginnen</button>
+            </div>
+        </section>
+        <section id="overlayFinished" class="overlay">
+            <div class="overlay-content-finished">
+                <h1>Game Over</h1>
+                <p id="feedback"></p>
+                <div>
+                    <button onclick="playAgain()" class="start">neuer Versuch</button>
+                    <a href="logout">
+                        <button class="start" aria-label="User">Spiel beenden</button>
+                    </a>
+                </div>
+            </div>
         </section>
     </main>
     <nav class="sizer">
@@ -37,7 +50,7 @@ echo $this->header;
             <button role="button" aria-label="User"><?php echo $this->username; ?></button>
         <?php endif; ?>
     </nav>
-    <button onclick="openManual()" id="manual" class="question" role="button" aria-label="Manual">?</button>
+    <button id="manual" class="question" role="button" aria-label="Manual">?</button>
 
 <?php
 
