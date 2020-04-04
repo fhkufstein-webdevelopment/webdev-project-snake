@@ -17,7 +17,7 @@ class GameController extends Controller
 		$this->view->username = $this->user->username;
 
         $this->checkForSaveScorePost();
-        $this->checkForGameLogout();
+
     }
 
     private function checkForSaveScorePost()
@@ -40,21 +40,5 @@ class GameController extends Controller
         }
     }
 
-    private function checkForGameLogout()
-    {
-        if(isset($_POST['action']) && $_POST['action'] == 'gameLogout')
-        {
-            //$user = $this->user->username;
 
-            //call logout function
-            $this->user->logout();
-
-            //finally send a JSON message that we saved the values...
-            $jsonResponse = new JSON();
-            $jsonResponse->result = true; //this is important, as the frontend expects result true if everything was ok
-            $jsonResponse->setMessage("Logout completed"); //(optional)
-            $jsonResponse->send();
-
-        }
-    }
 }

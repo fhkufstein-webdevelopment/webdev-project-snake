@@ -5,3 +5,4 @@ function openManual() {
 function closeManual() {
     document.getElementById("overlay").classList.remove("open");
 }
+

@@ -35,7 +35,7 @@ function checkGameStatus(endGame) {                                         // c
     if (endGame == true){                                                   // check if the status endGame is true and prozeed to make the finish screen
         gameFinished = true;                                                // set the gamefinished status to the endGame status
         saveScore(userScore,gameFinished);                                  // calls method to save score after game is finished
-        showGameFinishedDialog();                                           // calls GameFinishedDialog to play again or logout
+        clearInterval(intervalGame);
     }else if(gameRunning == true && gameFinished == false){                 // check if game is running and if game is not finished and then set the game to stop
         clearInterval(intervalGame);                                        // clear the interval of the game = stop the game
         document.getElementById("pause").style.color = "#192d00"; //makes Game Paused visible
@@ -48,13 +48,3 @@ function checkGameStatus(endGame) {                                         // c
 }
 
 
-function showGameFinishedDialog() {
-    let c;
-    c = confirm("Game Over!\nWollen sie nochmal spielen?\nMit Cancel loggen Sie sich aus");
-
-    if (c === true){
-        clearInterval(intervalGame);
-    }else{
-        gameLogout();
-    }
-}
