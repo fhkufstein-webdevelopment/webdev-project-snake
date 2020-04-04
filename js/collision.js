@@ -25,7 +25,6 @@ function checkInnerCollision(headX,headY,partX,partY,i,box){
 
         if(xyDistance <= box-1 && xyDistance >= 0){    // check if the xyDistance is between 0 and the box size of the elemnts -1 because if you the full pox there would collide
 
-            showGameFinishedDialog();
             checkGameStatus(true);
         }
     }

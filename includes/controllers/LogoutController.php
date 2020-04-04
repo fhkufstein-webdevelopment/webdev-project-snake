@@ -9,13 +9,20 @@ class LogoutController extends Controller
 	protected $loginRequired = false;
 
 
+
+
 	public function run()
 	{
 		$this->view->title = 'Logout';
+        $this->checkForGameLogout();
 
 		$this->user->logout();
 		$this->user = null;
+
+
+
 	}
+
 
 
 }

@@ -12,14 +12,14 @@ function drawUserScore(scoreToAdd, snakeLenght) {
 
 function showGameFinishedDialog() {
     confirm("Game Over! \n Wollen sie nochmal spielen? \n Mit Cancel loggen Sie sich aus");
-    if (confirm){
+    if (confirm) {
         location.reload();
-    }else{
+    } else {
         location.assign("/logout");
     }
 }
 
-function saveScore(userScore,gameStatus) {
+function saveScore(userScore, gameStatus) {
 
     if (gameStatus) {
         fetch('index', {
@@ -34,3 +34,4 @@ function saveScore(userScore,gameStatus) {
             .then(res => console.log(res))
     }
 }
+
