@@ -247,12 +247,10 @@ nav::before {
   border: 1px solid black;
   padding: 8px;
   font-size: 12px;
-  padding-top: 12px;
-  padding-bottom: 12px;
   text-align: center;
 }
 
-/* line 178, ../scss/_index.scss */
+/* line 176, ../scss/_index.scss */
 #tableScore th {
   background-color: grey;
   color: black;
