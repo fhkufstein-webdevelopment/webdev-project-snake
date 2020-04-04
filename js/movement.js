@@ -1,12 +1,12 @@
 let box = 25;
-let canvasSize = 23;
+let canvasSize = 600;
 
 
 let snake = [];
 //Anfangsposition Schlange
 snake [0] = {
-    x: Math.floor(canvasSize / 2 * box),
-    y: Math.floor(canvasSize / 2 * box)
+    x: Math.floor(canvasSize / 2),
+    y: Math.floor(canvasSize / 2)
 };
 let dir;
 document.addEventListener("keydown", function (event) {
@@ -42,8 +42,8 @@ function draw(canvas, ctx) {
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     //Schlangenkopf malen sowie weitere Glieder hinzufügen
     for (let i = 0; i < snake.length; i++) {
-        snake[i].x = exitWidth(snake[i].x,canvas);      //check if x position over the max with of the canvas // or is under it
-        snake[i].y = exitHeight(snake[i].y,canvas);     // check if y position over the max height of the canvas  // or is under it
+        snake[i].x = exitWidth(snake[i].x,canvas,box);      //check if x position over the max with of the canvas // or is under it
+        snake[i].y = exitHeight(snake[i].y,canvas,box);     // check if y position over the max height of the canvas  // or is under it
         ctx.fillStyle = "#000000";
         ctx.fillRect(snake[i].x, snake[i].y, box, box);
         checkInnerCollision(snake[0].x,snake[0].y,snake[i].x,snake[i].y,i,box); //check head touches the tail

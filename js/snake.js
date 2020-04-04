@@ -5,6 +5,7 @@ let userScore = 0;
 let interValTimer = 50;                // timeinterval for the game
 
 
+
 let canvas;                         // so the vairable can be seen from outside
 let ctx;                            // so the variable can be seen from outside
 
