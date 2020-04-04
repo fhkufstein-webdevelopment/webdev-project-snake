@@ -3,6 +3,7 @@ let gameRunning = true;
 let gameFinished = false;           // if gameFinished true -> send score to database
 let userScore = 0;
 let interValTimer = 50;                // timeinterval for the game
+let bgm;                              // backgroundmusic
 
 
 

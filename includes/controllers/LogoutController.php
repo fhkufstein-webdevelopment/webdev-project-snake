@@ -14,7 +14,6 @@ class LogoutController extends Controller
 	public function run()
 	{
 		$this->view->title = 'Logout';
-        $this->checkForGameLogout();
 
 		$this->user->logout();
 		$this->user = null;

@@ -18,6 +18,7 @@
     <meta name="theme-color" content="#ffffff">
 
     <?php if ($this->current == "index"): ?>
+        <script type="text/javascript" src="js/logout.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
         <!-- Import of the game Engine -->
         <script type="text/javascript" src="js/snake.js"></script>

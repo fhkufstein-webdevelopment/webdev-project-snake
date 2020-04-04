@@ -17,13 +17,13 @@ echo $this->header;
         <section id="overlay" class="overlay">
             <div class="overlay-content">
                 <h1>Steuerung</h1>
-                    <div class="up button"> &uarr;</div>
+                    <div class="up button"> &#8657;</div>
                     <br/>
-                    <div class="left button">&larr;</div>
-                    <div class="down button">&darr;</div>
-                    <div class="right button">&rarr;</div>
+                    <div class="left button">&#8656;</div>
+                    <div class="down button">&#8659;</div>
+                    <div class="right button">&#8658;</div>
                     <p>Richtung der Schlange bestimmen</p>
-                    <div class="p button">P<i class="fa fa-arrow-right"></i></div>
+                    <div class="p button">P</div>
                     <p>Spiel pausieren</p>
                 <button onclick="closeManual()" class="start">Spiel beginnen</button>
         </section>

@@ -10,14 +10,7 @@ function drawUserScore(scoreToAdd, snakeLenght) {
     document.getElementById("animals").innerText = snakeLenght; // update lenght
 }
 
-function showGameFinishedDialog() {
-    confirm("Game Over! \n Wollen sie nochmal spielen? \n Mit Cancel loggen Sie sich aus");
-    if (confirm) {
-        location.reload();
-    } else {
-        location.assign("/logout");
-    }
-}
+
 
 function saveScore(userScore, gameStatus) {
 
