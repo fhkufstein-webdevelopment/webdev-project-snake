@@ -43,7 +43,28 @@ echo $this->header;
         <section id="overlayHighscore" class="overlay">
             <div class="overlay-content-highscore">
                 <h1 class="overlay-h1">Highscore</h1>
-                    <button onclick="closeHighscore()" class="start">Zurück zum Spiel</button>
+                <div align="center">
+                <table id="tableScore">
+                    <thead>
+                    <tr>
+                        <th>Username</th>
+                        <th>Highscore</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            testname
+                        </td>
+                        <td>
+                            testpassword
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                </div>
+
+                <button onclick="closeHighscore()" class="start">Zurück zum Spiel</button>
             </div>
         </section>
     </main>

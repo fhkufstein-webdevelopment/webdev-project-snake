@@ -242,6 +242,22 @@ nav::before {
   margin-bottom: 40px;
 }
 
+/* line 169, ../scss/_index.scss */
+#tableScore td, #tableScore th {
+  border: 1px solid black;
+  padding: 8px;
+  font-size: 12px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+}
+
+/* line 178, ../scss/_index.scss */
+#tableScore th {
+  background-color: grey;
+  color: black;
+}
+
 /* line 1, ../scss/_login.scss */
 .login-page {
   text-align: center;
