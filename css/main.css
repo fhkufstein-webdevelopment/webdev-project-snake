@@ -219,7 +219,7 @@ nav::before {
 }
 
 /* line 148, ../scss/_index.scss */
-h1 {
+.overlay-h1 {
   font-size: 20px;
   margin-bottom: 40px;
 }

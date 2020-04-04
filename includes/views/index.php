@@ -16,7 +16,7 @@ echo $this->header;
         <section class="ol user"></section>
         <section id="overlay" class="overlay">
             <div class="overlay-content">
-                <h1>Steuerung</h1>
+                <h1 class="overlay-h1">Steuerung</h1>
                     <div class="up button"> &#8657;</div>
                     <br/>
                     <div class="left button">&#8656;</div>
