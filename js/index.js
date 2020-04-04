@@ -14,3 +14,11 @@ function playAgain(){
     location.reload();
 }
 
+function openHighscore(){
+    document.getElementById("overlayHighscore").classList.add("open")
+}
+
+function closeHighscore(){
+    document.getElementById("overlayHighscore").classList.remove("open")
+}
+

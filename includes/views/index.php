@@ -30,7 +30,7 @@ echo $this->header;
         </section>
         <section id="overlayFinished" class="overlay">
             <div class="overlay-content-finished">
-                <h1>Game Over</h1>
+                <h1 class="overlay-h1">Game Over</h1>
                 <p id="feedback"></p>
                 <div>
                     <button onclick="playAgain()" class="start">neuer Versuch</button>
@@ -40,9 +40,15 @@ echo $this->header;
                 </div>
             </div>
         </section>
+        <section id="overlayHighscore" class="overlay">
+            <div class="overlay-content-highscore">
+                <h1 class="overlay-h1">Highscore</h1>
+                    <button onclick="closeHighscore()" class="start">Zurück zum Spiel</button>
+            </div>
+        </section>
     </main>
     <nav class="sizer">
-        <button role="button" aria-label="Score">Score</button>
+        <button id="highscore" role="button" aria-label="Score">Score</button>
         <?php if (LOGGED_IN == true): ?>
             <a href="logout">
                 <button role="button" aria-label="User">Logout</button>

@@ -23,6 +23,12 @@ document.addEventListener("DOMContentLoaded", function (event) {
         openManual();
 
     });
+
+    document.getElementById("highscore").addEventListener("click",function () {
+        checkGameStatus();
+        openHighscore();
+
+    });
 });
 
 let gameRun = function game() {             // variable with function that calls the other function to draw backround and apples

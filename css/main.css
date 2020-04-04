@@ -194,6 +194,15 @@ nav::before {
 }
 
 /* line 126, ../scss/_index.scss */
+.overlay-content-highscore {
+  position: relative;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+  color: white;
+}
+
+/* line 134, ../scss/_index.scss */
 .button {
   width: 90px;
   height: 90px;
@@ -207,13 +216,13 @@ nav::before {
   margin: 5px -2.5px 20px -2.5px;
 }
 
-/* line 139, ../scss/_index.scss */
+/* line 147, ../scss/_index.scss */
 .p {
   margin-top: 80px;
   margin-bottom: 20px;
 }
 
-/* line 144, ../scss/_index.scss */
+/* line 152, ../scss/_index.scss */
 .start {
   border: 10px solid dimgrey;
   background: grey;
@@ -221,13 +230,13 @@ nav::before {
   cursor: pointer;
 }
 
-/* line 151, ../scss/_index.scss */
+/* line 159, ../scss/_index.scss */
 .up {
   position: relative;
   margin-bottom: 5px;
 }
 
-/* line 156, ../scss/_index.scss */
+/* line 164, ../scss/_index.scss */
 .overlay-h1 {
   font-size: 20px;
   margin-bottom: 40px;
