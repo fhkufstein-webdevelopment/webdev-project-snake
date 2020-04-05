@@ -25,7 +25,21 @@ echo $this->header;
                 <p>Richtung der Schlange bestimmen</p>
                 <div class="p button">P</div>
                 <p>Spiel pausieren</p>
-                <button onclick="closeManual()" class="start">Spiel beginnen</button>
+                <button onclick="closeManual()" class="start">Spiel fortsetzen</button>
+            </div>
+        </section>
+        <section id="overlayStart" class="overlay">
+            <div class="overlay-content-start">
+                <h1 class="overlay-h1">Steuerung</h1>
+                <div class="up button"> &#8657;</div>
+                <br/>
+                <div class="left button">&#8656;</div>
+                <div class="down button">&#8659;</div>
+                <div class="right button">&#8658;</div>
+                <p>Richtung der Schlange bestimmen</p>
+                <div class="p button">P</div>
+                <p>Spiel pausieren</p>
+                <button onclick="closeOverlayStart(); bgmplay()" class="start">Spiel beginnen</button>
             </div>
         </section>
         <section id="overlayFinished" class="overlay">

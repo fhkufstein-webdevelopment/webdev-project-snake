@@ -13,6 +13,7 @@ let ctx;                            // so the variable can be seen from outside
 document.addEventListener("DOMContentLoaded", function (event) {
     canvas = document.getElementById('field');
     if(canvas.getContext){ // Canvas wird nicht unterstützt
+        openOverlayStart();
         ctx = canvas.getContext("2d");   // set canvas to be a 2d objekt
     }else{
         alert("Fehler! Canvas wird von diesem Browser nicht unterstützt! Bitte wechseln Sie zu einem anderem Browser");
@@ -29,7 +30,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
         openHighscore();
 
     });
-
 
 
 });
@@ -56,6 +56,12 @@ function checkGameStatus(endGame) {                                         // c
         document.getElementById("pause").style.color = "#9ac40a"; //makes Game Paused visible
         gameRunning = true;                                                 // set game to status running again
     }
+}
+
+function bgmplay(){
+    bgm =new Audio("sfx/bgm.mp3");
+    bgm.play();
+    bgm.loop=true;
 }
 
 

@@ -163,7 +163,7 @@ nav::before {
 }
 
 /* line 102, ../scss/_index.scss */
-.overlay-content-manual {
+.overlay-content-manual, .overlay-content-start {
   position: relative;
   top: 5%;
   width: 100%;
