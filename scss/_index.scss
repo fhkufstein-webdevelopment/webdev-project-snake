@@ -38,15 +38,9 @@ nav {
   margin-top: 10px;
 
   button {
-    margin: 0;
+    margin: 10px;
 
-    &:first-of-type {
-      transform: translateX(-6px);
-    }
 
-    &:last-of-type {
-      transform: translateX(6px);
-    }
   }
 
   &::before {
@@ -85,9 +79,7 @@ nav {
   }
 }
 
-.question {
-  margin-top: 8vh;
-}
+
 
 //Overlay-manual
  .overlay {
@@ -125,7 +117,7 @@ nav {
 
 .overlay-content-highscore {
   position: relative;
-  top: 40%;
+  top: 15%;
   width: 100%;
   text-align: center;
   color: white;
@@ -178,3 +170,18 @@ nav {
   color:black;
 }
 
+
+
+//Highscore anzeige
+.scoreButton{
+  margin-bottom: 12px;
+  margin-top:5px;
+}
+
+#own {
+  float:right;
+}
+
+#global {
+  float:left;
+}

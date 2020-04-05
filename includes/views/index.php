@@ -65,17 +65,31 @@ echo $this->header;
                 <button onclick="closeHighscore()" class="start">Zurück zum Spiel</button>
             </div>
         </section>
+        <section>
+            <div align="center">
+                <button id="highscore" role="button" aria-label="Score">Higscores</button>
+            </div>
+            <button id="global" class="scoreButton">Global:
+                <?php $result = ScoreModel::getGlobalHighscore();
+                print_r($result->score)?>
+            </button>
+            <button id="own" class="scoreButton">Eigen:
+                <?php $result= ScoreModel::getHighscoreFromUser($this->username);
+                print_r($result->highscore)?>
+            </button>
+        </section>
     </main>
     <nav class="sizer">
-        <button id="highscore" role="button" aria-label="Score">Higscores</button>
         <?php if (LOGGED_IN == true): ?>
             <a href="logout">
                 <button role="button" aria-label="User">Logout</button>
             </a>
-            <button role="button" aria-label="User">User: <?php echo $this->username; ?></button>
+
+            <button aria-label="User">User: <?php echo $this->username; ?></button>
         <?php endif; ?>
+        <button id="manual" class="question" role="button" aria-label="Manual">Hilfe</button>
     </nav>
-    <button id="manual" class="question" role="button" aria-label="Manual">?</button>
+
 
 <?php
 

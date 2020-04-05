@@ -1,4 +1,5 @@
 @import "compass/reset";
+@import "compass/css3";
 
 @import "variables";
 
@@ -50,9 +51,22 @@ button {
   margin: 0 auto;
   padding: 4px;
 
-  &[role=button]:hover {
-    cursor:pointer;
+  &[role=button]{
+
+    background-color: #192d00;
+    color: #9ac40a;
+
+
+    &:hover {
+      cursor:pointer;
+      @include transition-property(padding);
+      @include transition-duration(300ms);
+      @include transition-timing-function(linear);
+
+    }
   }
+
+
 
   &:focus {
     outline: 2px solid $darkgreen;

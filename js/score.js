@@ -27,20 +27,5 @@ function saveScore(userScore, gameStatus) {
     }
 }
 
-function getGlobalHighscore() {
-
-
-    fetch('index', {
-        method: 'get',
-        headers: {
-            'Accept': 'application/json',
-            "Content-Type": "application/x-www-form-urlencoded"
-        },
-        body: "&action=getHighscoreList"
-    })
-        .then(res => res.json())
-        .then(res => console.log(res))
-
-}
 
 

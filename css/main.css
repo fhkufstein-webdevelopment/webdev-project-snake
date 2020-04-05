@@ -106,17 +106,9 @@ nav {
 }
 /* line 40, ../scss/_index.scss */
 nav button {
-  margin: 0;
+  margin: 10px;
 }
-/* line 43, ../scss/_index.scss */
-nav button:first-of-type {
-  transform: translateX(-6px);
-}
-/* line 47, ../scss/_index.scss */
-nav button:last-of-type {
-  transform: translateX(6px);
-}
-/* line 52, ../scss/_index.scss */
+/* line 46, ../scss/_index.scss */
 nav::before {
   position: absolute;
   left: 0;
@@ -128,7 +120,7 @@ nav::before {
   background-color: #192d00;
 }
 
-/* line 64, ../scss/_index.scss */
+/* line 58, ../scss/_index.scss */
 .ol {
   position: fixed;
   top: 0;
@@ -136,28 +128,23 @@ nav::before {
   height: 100%;
   background-color: red;
 }
-/* line 72, ../scss/_index.scss */
+/* line 66, ../scss/_index.scss */
 .ol.score {
   left: 0;
   transform: translateX(-100%);
 }
-/* line 77, ../scss/_index.scss */
+/* line 71, ../scss/_index.scss */
 .ol.user {
   left: 0;
   transform: translateX(100%);
 }
-/* line 82, ../scss/_index.scss */
+/* line 76, ../scss/_index.scss */
 .ol.manual {
   left: 0;
   transform: translateX(100%);
 }
 
-/* line 88, ../scss/_index.scss */
-.question {
-  margin-top: 8vh;
-}
-
-/* line 93, ../scss/_index.scss */
+/* line 85, ../scss/_index.scss */
 .overlay {
   height: 100%;
   width: 0;
@@ -170,12 +157,12 @@ nav::before {
   overflow-x: hidden;
   transition: 0.5s;
 }
-/* line 105, ../scss/_index.scss */
+/* line 97, ../scss/_index.scss */
 .overlay.open {
   width: 100%;
 }
 
-/* line 110, ../scss/_index.scss */
+/* line 102, ../scss/_index.scss */
 .overlay-content-manual {
   position: relative;
   top: 5%;
@@ -184,7 +171,7 @@ nav::before {
   color: white;
 }
 
-/* line 118, ../scss/_index.scss */
+/* line 110, ../scss/_index.scss */
 .overlay-content-finished {
   position: relative;
   top: 40%;
@@ -193,16 +180,16 @@ nav::before {
   color: white;
 }
 
-/* line 126, ../scss/_index.scss */
+/* line 118, ../scss/_index.scss */
 .overlay-content-highscore {
   position: relative;
-  top: 40%;
+  top: 15%;
   width: 100%;
   text-align: center;
   color: white;
 }
 
-/* line 134, ../scss/_index.scss */
+/* line 126, ../scss/_index.scss */
 .button {
   width: 90px;
   height: 90px;
@@ -216,13 +203,13 @@ nav::before {
   margin: 5px -2.5px 20px -2.5px;
 }
 
-/* line 147, ../scss/_index.scss */
+/* line 139, ../scss/_index.scss */
 .p {
   margin-top: 80px;
   margin-bottom: 20px;
 }
 
-/* line 152, ../scss/_index.scss */
+/* line 144, ../scss/_index.scss */
 .start {
   border: 10px solid dimgrey;
   background: grey;
@@ -230,19 +217,19 @@ nav::before {
   cursor: pointer;
 }
 
-/* line 159, ../scss/_index.scss */
+/* line 151, ../scss/_index.scss */
 .up {
   position: relative;
   margin-bottom: 5px;
 }
 
-/* line 164, ../scss/_index.scss */
+/* line 156, ../scss/_index.scss */
 .overlay-h1 {
   font-size: 20px;
   margin-bottom: 40px;
 }
 
-/* line 169, ../scss/_index.scss */
+/* line 161, ../scss/_index.scss */
 #tableScore td, #tableScore th {
   border: 1px solid black;
   padding: 8px;
@@ -250,10 +237,26 @@ nav::before {
   text-align: center;
 }
 
-/* line 176, ../scss/_index.scss */
+/* line 168, ../scss/_index.scss */
 #tableScore th {
   background-color: grey;
   color: black;
+}
+
+/* line 176, ../scss/_index.scss */
+.scoreButton {
+  margin-bottom: 12px;
+  margin-top: 5px;
+}
+
+/* line 181, ../scss/_index.scss */
+#own {
+  float: right;
+}
+
+/* line 185, ../scss/_index.scss */
+#global {
+  float: left;
 }
 
 /* line 1, ../scss/_login.scss */
@@ -384,7 +387,7 @@ nav::before {
   margin-bottom: 1rem;
 }
 
-/* line 10, ../scss/main.scss */
+/* line 11, ../scss/main.scss */
 html {
   background-color: #9ac40a;
   color: #192d00;
@@ -392,7 +395,7 @@ html {
   font-size: 12px;
 }
 
-/* line 17, ../scss/main.scss */
+/* line 18, ../scss/main.scss */
 body {
   height: 100vh;
   margin: 0 20px;
@@ -404,27 +407,27 @@ body {
   line-height: 1.2rem;
 }
 
-/* line 28, ../scss/main.scss */
+/* line 29, ../scss/main.scss */
 header.logo {
   text-align: center;
   margin-bottom: 3rem;
 }
-/* line 32, ../scss/main.scss */
+/* line 33, ../scss/main.scss */
 header.logo h1 {
   font-size: 3rem;
 }
 
-/* line 37, ../scss/main.scss */
+/* line 38, ../scss/main.scss */
 a, button {
   color: #192d00;
 }
 
-/* line 41, ../scss/main.scss */
+/* line 42, ../scss/main.scss */
 .sizer {
   max-width: 500px;
 }
 
-/* line 45, ../scss/main.scss */
+/* line 46, ../scss/main.scss */
 button {
   background: none;
   border: none;
@@ -433,23 +436,40 @@ button {
   margin: 0 auto;
   padding: 4px;
 }
-/* line 53, ../scss/main.scss */
+/* line 54, ../scss/main.scss */
+button[role=button] {
+  background-color: #192d00;
+  color: #9ac40a;
+}
+/* line 60, ../scss/main.scss */
 button[role=button]:hover {
   cursor: pointer;
+  -moz-transition-property: padding;
+  -o-transition-property: padding;
+  -webkit-transition-property: padding;
+  transition-property: padding;
+  -moz-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  -webkit-transition-duration: 300ms;
+  transition-duration: 300ms;
+  -moz-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  -webkit-transition-timing-function: linear;
+  transition-timing-function: linear;
 }
-/* line 57, ../scss/main.scss */
+/* line 71, ../scss/main.scss */
 button:focus {
   outline: 2px solid #192d00;
 }
 
 /* Media Queries */
 @media (min-width: 660px) {
-  /* line 66, ../scss/main.scss */
+  /* line 80, ../scss/main.scss */
   html {
     font-size: 16px;
   }
 
-  /* line 70, ../scss/main.scss */
+  /* line 84, ../scss/main.scss */
   body {
     margin: 0 auto;
   }
