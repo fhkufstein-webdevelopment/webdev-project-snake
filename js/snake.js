@@ -44,6 +44,7 @@ function checkGameStatus(endGame) {                                         // c
     if (endGame == true){                                                   // check if the status endGame is true and prozeed to make the finish screen
         gameFinished = true;                                                // set the gamefinished status to the endGame status
         saveScore(userScore,gameFinished);                                  // calls method to save score after game is finished
+        getFeedback();
         overlayFinished();
         clearInterval(intervalGame);
     }else if(gameRunning == true && gameFinished == false){                 // check if game is running and if game is not finished and then set the game to stop

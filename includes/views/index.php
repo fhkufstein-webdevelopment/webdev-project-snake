@@ -67,7 +67,7 @@ echo $this->header;
         </section>
         <section>
             <div align="center">
-                <button id="highscore" role="button" aria-label="Score">Higscores</button>
+                <button id="highscore" role="button" aria-label="Score">Highscore</button>
             </div>
             <button id="global" class="scoreButton">Global:
                 <?php $result = ScoreModel::getGlobalHighscore();

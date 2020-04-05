@@ -23,3 +23,14 @@ function closeHighscore(){
     document.getElementById("overlayHighscore").classList.remove("open")
 }
 
+function getFeedback(){
+    let global=document.getElementById("global").innerHTML;
+    let own=document.getElementById("points").innerHTML;
+    if(own>50){
+        document.getElementById("feedback").innerText="Glückwunsch! Sie haben die Highscore geschlagen!"
+    }
+    else{
+        document.getElementById("feedback").innerText="Leider wurde die Highscore nicht geknackt!"
+    }
+}
+
