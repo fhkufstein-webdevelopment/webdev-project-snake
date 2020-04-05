@@ -2,6 +2,8 @@
 
 class ScoreModel
 {
+
+
     public static function getHighscoreFromUser($user)
     {
         $db = new Database();
@@ -23,7 +25,7 @@ class ScoreModel
         $db = new Database();
 
         // returns a sorted list with all highscores
-        $sql = "SELECT user.name, highscore.score FROM highscore join user on highscore.user_id = user.id order by highscore.score desc";
+        $sql = "SELECT user.name, highscore.score FROM highscore join user on highscore.user = user.name order by highscore.score desc";
         $result = $db->query($sql);
 
         if ($db->numRows($result) > 0) {
@@ -33,7 +35,7 @@ class ScoreModel
                 $highscoreArray[] = $row;
             }
 
-            return $highscoreArray;
+            return array_slice($highscoreArray,0,10);
         }
 
         return null;

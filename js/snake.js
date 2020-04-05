@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function (event) {
         openHighscore();
 
     });
+
+    //get HighscoreList
+    getGlobalHighscore();
+
 });
 
 let gameRun = function game() {             // variable with function that calls the other function to draw backround and apples

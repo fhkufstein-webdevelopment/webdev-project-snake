@@ -44,26 +44,24 @@ echo $this->header;
             <div class="overlay-content-highscore">
                 <h1 class="overlay-h1">Highscore</h1>
                 <div align="center">
-                <table id="tableScore">
-                    <thead>
-                    <tr>
-                        <th>Username</th>
-                        <th>Highscore</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>
-                            testname
-                        </td>
-                        <td>
-                            testpassword
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
+                    <table id="tableScore">
+                        <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Score</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php $scoreArray = ScoreModel::getGlobalHighscoreList();
+                        foreach ($scoreArray as $row) :?>
+                            <tr>
+                                <td><?php print_r($row->name);  ?></td>
+                                <td><?php print_r($row->score);  ?></td>
+                            </tr>
+                        <?php endforeach; ?>
+                        </tbody>
+                    </table>
                 </div>
-
                 <button onclick="closeHighscore()" class="start">Zurück zum Spiel</button>
             </div>
         </section>

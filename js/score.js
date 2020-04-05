@@ -11,7 +11,6 @@ function drawUserScore(scoreToAdd, snakeLenght) {
 }
 
 
-
 function saveScore(userScore, gameStatus) {
 
     if (gameStatus) {
@@ -27,4 +26,21 @@ function saveScore(userScore, gameStatus) {
             .then(res => console.log(res))
     }
 }
+
+function getGlobalHighscore() {
+
+
+    fetch('index', {
+        method: 'get',
+        headers: {
+            'Accept': 'application/json',
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: "&action=getHighscoreList"
+    })
+        .then(res => res.json())
+        .then(res => console.log(res))
+
+}
+
 

@@ -16,6 +16,7 @@ function playAgain(){
 
 function openHighscore(){
     document.getElementById("overlayHighscore").classList.add("open")
+
 }
 
 function closeHighscore(){

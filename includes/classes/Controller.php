@@ -8,6 +8,7 @@ abstract class Controller
 	protected $loginRequired = true;
 	protected $user = null;
 
+
 	abstract function run();
 
 	public function __construct($pageName)

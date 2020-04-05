@@ -46,8 +46,8 @@ echo $this->header;
                 <input type="text" name="name" id="name" placeholder="Benutzernamen eingeben">
                 <input type="password" name="pwd" id="pwd1" placeholder="Bitte Passwort eingeben (mind. 8 Zeichen)">
                 <input type="password" name="pwd2" id="pwd2" placeholder="Bitte das Passwort wiederholen">
-                <button type="submit" class="register">Registrieren</button>
-                <button type="button" class="toggle">Abbrechen</button>
+                <button role="button" type="submit" class="register">Registrieren</button>
+                <button role="button" type="button" class="toggle">Abbrechen</button>
             </form>
         </section>
     </main>

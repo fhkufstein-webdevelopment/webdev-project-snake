@@ -11,6 +11,7 @@ class View
 	private $strBuffer = "";
 
 
+
 	public function __construct($viewName, $currentPage = null)
 	{
 		$this->viewName = $viewName;
