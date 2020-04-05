@@ -9,7 +9,7 @@ class ScoreModel
         $db = new Database();
 
         //returns the highest score of the current user. Should be visible during the game
-        $sql = "SELECT max(score) FROM highscore WHERE user=" . intval($user);
+        $sql = "SELECT max(score) FROM highscore WHERE user=$user";
 
         $result = $db->query($sql);
 
@@ -46,7 +46,7 @@ class ScoreModel
         $db = new Database();
 
         // returns only the global absolute Highscore
-        $sql = "SELECT user.name, max(highscore.score) FROM highscore join user on highscore.user_id = user.id";
+        $sql = "SELECT user.name, max(highscore.score) FROM highscore join user on highscore.user = user.name";
         $result = $db->query($sql);
 
         if ($db->numRows($result) > 0) {

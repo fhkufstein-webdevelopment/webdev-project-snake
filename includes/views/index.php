@@ -67,12 +67,12 @@ echo $this->header;
         </section>
     </main>
     <nav class="sizer">
-        <button id="highscore" role="button" aria-label="Score">Score</button>
+        <button id="highscore" role="button" aria-label="Score">Higscores</button>
         <?php if (LOGGED_IN == true): ?>
             <a href="logout">
                 <button role="button" aria-label="User">Logout</button>
             </a>
-            <button role="button" aria-label="User"><?php echo $this->username; ?></button>
+            <button role="button" aria-label="User">User: <?php echo $this->username; ?></button>
         <?php endif; ?>
     </nav>
     <button id="manual" class="question" role="button" aria-label="Manual">?</button>

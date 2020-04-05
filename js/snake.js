@@ -30,8 +30,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     });
 
-    //get HighscoreList
-    getGlobalHighscore();
+
 
 });
 
