@@ -441,35 +441,23 @@ button[role=button] {
   background-color: #192d00;
   color: #9ac40a;
 }
-/* line 60, ../scss/main.scss */
+/* line 58, ../scss/main.scss */
 button[role=button]:hover {
   cursor: pointer;
-  -moz-transition-property: padding;
-  -o-transition-property: padding;
-  -webkit-transition-property: padding;
-  transition-property: padding;
-  -moz-transition-duration: 300ms;
-  -o-transition-duration: 300ms;
-  -webkit-transition-duration: 300ms;
-  transition-duration: 300ms;
-  -moz-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
 }
-/* line 71, ../scss/main.scss */
+/* line 65, ../scss/main.scss */
 button:focus {
   outline: 2px solid #192d00;
 }
 
 /* Media Queries */
 @media (min-width: 660px) {
-  /* line 80, ../scss/main.scss */
+  /* line 74, ../scss/main.scss */
   html {
     font-size: 16px;
   }
 
-  /* line 84, ../scss/main.scss */
+  /* line 78, ../scss/main.scss */
   body {
     margin: 0 auto;
   }

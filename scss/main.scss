@@ -51,21 +51,15 @@ button {
   margin: 0 auto;
   padding: 4px;
 
-  &[role=button]{
-
+  &[role=button] {
     background-color: #192d00;
     color: #9ac40a;
 
-
     &:hover {
-      cursor:pointer;
-      @include transition-property(padding);
-      @include transition-duration(300ms);
-      @include transition-timing-function(linear);
+      cursor: pointer;
 
     }
   }
-
 
 
   &:focus {
