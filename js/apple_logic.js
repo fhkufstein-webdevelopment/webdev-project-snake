@@ -20,7 +20,7 @@ function createNewCircle(canv, ctx,snake) {
         appleX -= (appleX%applewidth)+(applewidth)/2;
         appleY -= (appleY%appleheight)+(appleheight)/2;
         if (checkIfAppleDrawnOverSnake(canv, ctx,snake) == true){
-            createNewCircle(canv,ctx,snake);
+
         }else{
             ctx.beginPath();                                    // used to create a circle // say it should shart here
             ctx.arc(appleX, appleY, arcWH, 0, arcRad, false);    // create an ark (circle) ,x and y position, radius, starting angle, end angle , and if it should go counter clockwise
@@ -28,7 +28,7 @@ function createNewCircle(canv, ctx,snake) {
             ctx.fill();                                         // fill the apple with the set color
             ctx.stroke();                                       // to actually draw the acr to the canvas
             newapple = false;
-            //hellMode(canv,ctx,true);
+            hellMode(canv,ctx,true);
         }
 
     } else {
@@ -37,7 +37,7 @@ function createNewCircle(canv, ctx,snake) {
         ctx.fillStyle = appleColor;                         // set the color of the apple
         ctx.fill();                                         // fill the apple with the set color
         ctx.stroke();                                       // to actually draw the acr to the canvas
-        hellMode(canv,ctx,false);
+        //hellMode(canv,ctx,false);
     }
 };
 
@@ -47,8 +47,11 @@ function checkIfAppleDrawnOverSnake(canv, ctx,snake) {
         let yDistance = appleY - item.y;  // get y differecne fo the snake and the circle
         let xyDistance = Math.sqrt(Math.pow(xDistance,2)+ Math.pow(yDistance,2)); // squareroot of (xdifference times 2) + (ydifference times 2)
 
-        if(xyDistance <= appleheight && xyDistance >= 0){    // check if the xyDistance is between 0 and the appleHeigt of the elemnts
-        }   return true;
+        if(xyDistance <= applewidth && xyDistance >= 0){    // check if the xyDistance is between 0 and the appleHeigt of the elemnts
+            alert("aa");
+            createNewCircle(canv, ctx,snake)
+            return true;
+        }
     });
     return false;
 }
@@ -91,6 +94,14 @@ function checkCollisionApple(deathBlockX,deathBlockY){
         return true;
     }return false;
 };
+
+function checkCollisionHellblockSnake(snake){
+    hellModeBlocks.forEach(function (item) {
+        if(snake[0].x >= item[0] && snake[0].x < item[0]+(applewidth/2) && snake[0].y >= item[1] && snake[0].y < item[1]+(appleheight/2)){
+            alert("aa");
+        }
+    })
+}
 
 // -------------------------------------------------------------------------------------------------
 
