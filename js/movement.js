@@ -69,6 +69,7 @@ function draw(canvas, ctx) {
     };
     //newHead wird zur Schlange hinzugefügt
     snake.unshift(newHead);
+    createNewCircle(canvas, ctx,snake);           // call of the circles (apples)
     drawUserScore(snakeOver(snake[0].x, snake[0].y, canvas, ctx, box),snake.length);
 };
 

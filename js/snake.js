@@ -2,7 +2,7 @@
 let gameRunning = true;
 let gameFinished = false;           // if gameFinished true -> send score to database
 let userScore = 0;
-let interValTimer = 50;                // timeinterval for the game
+let interValTimer = 150;                // timeinterval for the game
 let bgm;                              // backgroundmusic
 
 
@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 let gameRun = function game() {             // variable with function that calls the other function to draw backround and apples
     draw(canvas, ctx, dir);                //call of the background
-    createNewCircle(canvas, ctx);           // call of the circles (apples)
+    //createNewCircle(canvas, ctx);           // call of the circles (apples)
 };
 let intervalGame = setInterval(gameRun,interValTimer);  // set interval to the variable gameRun with function
 

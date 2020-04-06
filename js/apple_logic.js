@@ -13,23 +13,24 @@ let newapple = true;
 let hellModeBlocks = [];
 
 // create new circle
-function createNewCircle(canv, ctx) {
+function createNewCircle(canv, ctx,snake) {
     if (newapple == true) {
-        appleX = Math.floor(Math.random() * (canv.width - (applewidth * 2)) + applewidth);  //create random x position with the max width of the canvas -1 // -*2 + applewith is that it cant go over the maxamount
-        appleY = Math.floor(Math.random() * (canv.height - (appleheight * 2)) + applewidth); // create random y position with the max height of the canvas -1 // -*2 + applewith is that it cant go over the maxamount
-        if(appleX%25 != 0){
-            appleX -= (appleX%applewidth)+(applewidth)/2;
+        appleX = Math.floor(Math.random() * (canv.width - (applewidth * 2)) + applewidth*2);  //create random x position with the max width of the canvas -1 // -*2 + applewith is that it cant go over the maxamount
+        appleY = Math.floor(Math.random() * (canv.height - (appleheight * 2)) + applewidth*2); // create random y position with the max height of the canvas -1 // -*2 + applewith is that it cant go over the maxamount
+        appleX -= (appleX%applewidth)+(applewidth)/2;
+        appleY -= (appleY%appleheight)+(appleheight)/2;
+        if (checkIfAppleDrawnOverSnake(canv, ctx,snake) == true){
+            createNewCircle(canv,ctx,snake);
+        }else{
+            ctx.beginPath();                                    // used to create a circle // say it should shart here
+            ctx.arc(appleX, appleY, arcWH, 0, arcRad, false);    // create an ark (circle) ,x and y position, radius, starting angle, end angle , and if it should go counter clockwise
+            ctx.fillStyle = appleColor;                         // set the color of the apple
+            ctx.fill();                                         // fill the apple with the set color
+            ctx.stroke();                                       // to actually draw the acr to the canvas
+            newapple = false;
+            //hellMode(canv,ctx,true);
         }
-        if (appleY%25 != 0){
-            appleY -= (appleY%appleheight)+(appleheight)/2;
-        }
-        ctx.beginPath();                                    // used to create a circle // say it should shart here
-        ctx.arc(appleX, appleY, arcWH, 0, arcRad, false);    // create an ark (circle) ,x and y position, radius, starting angle, end angle , and if it should go counter clockwise
-        ctx.fillStyle = appleColor;                         // set the color of the apple
-        ctx.fill();                                         // fill the apple with the set color
-        ctx.stroke();                                       // to actually draw the acr to the canvas
-        newapple = false;
-        //hellMode(canv,ctx,true);
+
     } else {
         ctx.beginPath();                                    // used to create a circle // say it should shart here
         ctx.arc(appleX, appleY, arcWH, 0, arcRad, false);    // create an ark (circle) ,x and y position, radius, starting angle, end angle , and if it should go counter clockwise
@@ -39,6 +40,18 @@ function createNewCircle(canv, ctx) {
         hellMode(canv,ctx,false);
     }
 };
+
+function checkIfAppleDrawnOverSnake(canv, ctx,snake) {
+    snake.forEach(function (item) {
+        let xDistance = appleX - item.x;  // get x difference of the snake and the circle
+        let yDistance = appleY - item.y;  // get y differecne fo the snake and the circle
+        let xyDistance = Math.sqrt(Math.pow(xDistance,2)+ Math.pow(yDistance,2)); // squareroot of (xdifference times 2) + (ydifference times 2)
+
+        if(xyDistance <= appleheight && xyDistance >= 0){    // check if the xyDistance is between 0 and the appleHeigt of the elemnts
+        }   return true;
+    });
+    return false;
+}
 
  // ----------------------------------------- Hellmode Test -----------------------------------------
 
