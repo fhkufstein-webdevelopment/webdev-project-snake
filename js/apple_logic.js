@@ -10,7 +10,6 @@ let applePoints = 10;        // amount of points to get if collected
 let applewidth = 25;         // width of the apple
 let appleheight = 25;        // height of the apple
 let newapple = true;
-let hellModeBlocks = [];
 
 // create new circle
 function createNewCircle(canv, ctx,snake) {
@@ -55,55 +54,6 @@ function checkIfAppleDrawnOverSnake(canv, ctx,snake) {
     });
     return false;
 }
-
- // ----------------------------------------- Hellmode Test -----------------------------------------
-
-function hellMode(canv,ctx,newBlock){
-    if(newBlock == true){
-        let deathBlockX = Math.floor(Math.random() * (canv.width - applewidth));
-        let deathBlockY = Math.floor(Math.random() * (canv.height - appleheight));
-        if(deathBlockX%25 != 0){
-            deathBlockX -= (deathBlockX%25);
-        }
-        if(deathBlockY%25 != 0){
-            deathBlockY -= (deathBlockY%25);
-        }
-        if(checkCollisionApple(deathBlockX,deathBlockY) == false && checkCollisionDeathBlock(deathBlockX,deathBlockY) == false){
-            hellModeBlocks.push([deathBlockX,deathBlockY]);
-        }
-    }else{
-        hellModeBlocks.forEach(function (item) {
-            ctx.fillStyle = "FF0000";
-            ctx.fillRect(item[0],item[1],applewidth,applewidth);
-
-        });
-    }
-}
-
-function checkCollisionDeathBlock(deathBlockX,deathBlockY) {
-    hellModeBlocks.forEach(function (item) {
-        if((deathBlockX >= (item[0]-(applewidth*10)) && deathBlockX <= (item[0]+(applewidth*10))) && (deathBlockY >= (item[1]-(applewidth*10)) && deathBlockY <= (item[1]+(applewidth*10)))){
-            return true;
-        }
-    });
-    return false;
-};
-
-function checkCollisionApple(deathBlockX,deathBlockY){
-    if((deathBlockX >= (appleX - applewidth/2) && deathBlockX <= (appleX+applewidth/2))&& ((deathBlockY >= (appleY-appleheight*2))&& deathBlockY <= (appleY+appleheight*2))){
-        return true;
-    }return false;
-};
-
-function checkCollisionHellblockSnake(snake){
-    hellModeBlocks.forEach(function (item) {
-        if(snake[0].x >= item[0] && snake[0].x < item[0]+(applewidth/2) && snake[0].y >= item[1] && snake[0].y < item[1]+(appleheight/2)){
-            alert("aa");
-        }
-    })
-}
-
-// -------------------------------------------------------------------------------------------------
 
 function snakeOver(snakeX, snakeY, canv, ctx, snakeSize) {
     if ((snakeX >= (appleX - applewidth / 2) && snakeX < (appleX + applewidth / 2)) && (snakeY < (appleY + appleheight / 2) && snakeY >= (appleY - applewidth / 2))) {
