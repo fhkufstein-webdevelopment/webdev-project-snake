@@ -27,7 +27,7 @@ function createNewCircle(canv, ctx,snake) {
             ctx.fill();                                         // fill the apple with the set color
             ctx.stroke();                                       // to actually draw the acr to the canvas
             newapple = false;
-            hellMode(canv,ctx,true);
+            //hellMode(canv,ctx,true);
         }
 
     } else {
@@ -47,7 +47,6 @@ function checkIfAppleDrawnOverSnake(canv, ctx,snake) {
         let xyDistance = Math.sqrt(Math.pow(xDistance,2)+ Math.pow(yDistance,2)); // squareroot of (xdifference times 2) + (ydifference times 2)
 
         if(xyDistance <= applewidth && xyDistance >= 0){    // check if the xyDistance is between 0 and the appleHeigt of the elemnts
-            alert("aa");
             createNewCircle(canv, ctx,snake)
             return true;
         }

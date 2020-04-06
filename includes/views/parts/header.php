@@ -24,6 +24,7 @@
         <script type="text/javascript" src="js/movement.js"></script>
         <script type="text/javascript" src="js/collision.js"></script>
         <script type="text/javascript" src="js/score.js"></script>
+        <script type="text/javascript" src="js/hellmode.js"></script>
     <?php elseif ($this->current == "login"): ?>
         <script type="text/javascript" src="js/login.js"></script>
     <?php endif; ?>
