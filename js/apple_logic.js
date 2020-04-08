@@ -57,6 +57,7 @@ function checkIfAppleDrawnOverSnake(canv, ctx,snake) {
 function snakeOver(snakeX, snakeY, canv, ctx, snakeSize) {
     if ((snakeX >= (appleX - applewidth / 2) && snakeX < (appleX + applewidth / 2)) && (snakeY < (appleY + appleheight / 2) && snakeY >= (appleY - applewidth / 2))) {
         // collision detection if the snake is in the range of the circle from the middle of the circle up the appleheight and applewidth to get the whole apple
+        eatSoundPlay();
         createNewCircle(canv, ctx);  // if it is ture draw anohter circle
         newapple = true;
         return applePoints; // return the amount fo points you gain
@@ -64,6 +65,7 @@ function snakeOver(snakeX, snakeY, canv, ctx, snakeSize) {
     } else {
         snake.pop(); //snake grows by one rectangle
         return 0;
+
 
     }
 

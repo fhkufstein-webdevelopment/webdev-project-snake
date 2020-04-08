@@ -39,7 +39,7 @@ echo $this->header;
                 <p>Richtung der Schlange bestimmen</p>
                 <div class="p button">P</div>
                 <p>Spiel pausieren</p>
-                <button onclick="closeOverlayStart(); bgmplay()" class="start">Spiel beginnen</button>
+                <button onclick="closeOverlayStart(); bgmPlay()" class="start">Spiel beginnen</button>
             </div>
         </section>
         <section id="overlayFinished" class="overlay">
