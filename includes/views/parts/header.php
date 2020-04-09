@@ -19,6 +19,7 @@
     <?php if ($this->current == "index"): ?>
         <script type="text/javascript" src="js/index.js"></script>
         <!-- Import of the game Engine -->
+        <script type="text/javascript" src="js/bgm_sfx.js"></script>
         <script type="text/javascript" src="js/snake.js"></script>
         <script type="text/javascript" src="js/apple_logic.js"></script>
         <script type="text/javascript" src="js/movement.js"></script>

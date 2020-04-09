@@ -1,7 +1,7 @@
 /* -----------------------------------------------actual mechanic------------------------------------------------------------------ */
 let arcWH = 10;              // for the circle size
 let arcRad = 2 * Math.PI;    // for the radius
-let appleColor = "blue";  // color of the apple
+let appleColor = "&darkgreen";  // color of the apple
 
 let appleX;                  // x position of the apple
 let appleY;                  // y positon of the apple

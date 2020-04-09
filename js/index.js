@@ -8,6 +8,7 @@ function closeManual() {
 
 function overlayFinished() {
     document.getElementById("overlayFinished").classList.add("open");
+    begin=false;
 }
 
 function playAgain() {
@@ -24,17 +25,17 @@ function closeHighscore() {
 }
 
 function getFeedback() {
-    let global =  document.getElementById("global").textContent;
+    let global = document.getElementById("global").textContent;
     global = global.slice(8);
     let own = document.getElementById("own").textContent;
     own = own.slice(7);
 
-    console.log("Global: " + global + ", Eigen: " + own) ;
+    console.log("Global: " + global + ", Eigen: " + own);
     bgm.pause();
-    if (userScore>global) {
+    if (userScore > global) {
         winSoundPlay();
         document.getElementById("feedback").textContent = "WOW!!! Sie haben den globalen Highscore geschlagen!"
-    }else if (userScore>own){
+    } else if (userScore > own) {
         winSoundPlay();
         document.getElementById("feedback").textContent = "Glückwunsch! Sie haben Ihren persönlichen Highscore verbessert!"
     } else {
@@ -43,10 +44,11 @@ function getFeedback() {
     }
 }
 
-function openOverlayStart(){
-    document.getElementById("overlayStart").classList.add("open");
+function openOverlayStart() {
+        document.getElementById("overlayStart").classList.add("open");
+
 }
 
-function closeOverlayStart(){
+function closeOverlayStart() {
     document.getElementById("overlayStart").classList.remove("open");
 }

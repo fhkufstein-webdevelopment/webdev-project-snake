@@ -4,18 +4,13 @@ let gameFinished = false;           // if gameFinished true -> send score to dat
 let userScore = 0;
 let interValTimer = 50;                // timeinterval for the game
 
-let bgm;                              // backgroundmusic
-let eatSound;                         //sound when snake eats a fruit
-let winSound;                         //sound when beating the global highscore
-let looseSound;                       //sound when not beating the global highscore
-
 let canvas;                         // so the vairable can be seen from outside
 let ctx;                            // so the variable can be seen from outside
 
 document.addEventListener("DOMContentLoaded", function (event) {
     canvas = document.getElementById('field');
+    openOverlayStart();
     if(canvas.getContext){
-        openOverlayStart();
         ctx = canvas.getContext("2d");   // set canvas to be a 2d objekt
     }else{ // Canvas wird nicht unterstützt
         alert("Fehler! Canvas wird von diesem Browser nicht unterstützt! Bitte wechseln Sie zu einem anderem Browser");
@@ -57,23 +52,4 @@ function checkGameStatus(endGame) {                                         // c
 
 //Sound
 
-function bgmPlay(){
-    bgm =new Audio("sfx/bgm.mp3");
-    bgm.play();
-    bgm.loop=true;
-}
 
-function eatSoundPlay (){
-    eatSound = new Audio("sfx/eatsound.mp3");
-    eatSound.play();
-}
-
-function winSoundPlay(){
-    winSound= new Audio("sfx/winsound.mp3");
-    winSound.play();
-}
-
-function looseSoundPlay(){
-    looseSound= new Audio("sfx/loosesound.mp3");
-    looseSound.play();
-}
