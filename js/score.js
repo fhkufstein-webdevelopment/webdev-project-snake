@@ -1,7 +1,7 @@
 function drawUserScore(scoreToAdd, snakeLenght) {
     userScore += scoreToAdd;
     document.getElementById("points").innerText = userScore; // update points
-    document.getElementById("animals").innerText = snakeLenght; // update length
+    document.getElementById("animals").innerText = snakeLenght - 1; // update length
 }
 
 

@@ -3,22 +3,20 @@ function playAgain() {
 }
 
 function getFeedback() {
-    let global = document.getElementById("global").textContent;
-    global = global.slice(8);
-    let own = document.getElementById("own").textContent;
-    own = own.slice(7);
+    let global = document.querySelector(".global span").textContent;
+    let own = document.querySelector(".personal span").textContent;
 
-    console.log("Global: " + global + ", Eigen: " + own);
+    console.log("Global: " + global + ", Personal: " + own);
     bgm.pause();
     if (userScore > global) {
         winSoundPlay();
-        document.getElementById("feedback").textContent = "WOW!!! Sie haben den globalen Highscore geschlagen!"
+        document.querySelector("#feedback").textContent = "WOW!!! Sie haben den globalen Highscore geschlagen!"
     } else if (userScore > own) {
         winSoundPlay();
-        document.getElementById("feedback").textContent = "Glückwunsch! Sie haben Ihren persönlichen Highscore verbessert!"
+        document.querySelector("#feedback").textContent = "Glückwunsch! Sie haben Ihren persönlichen Highscore verbessert!"
     } else {
         looseSoundPlay();
-        document.getElementById("feedback").textContent = "Schade! Leider kein neuer Highscore!"
+        document.querySelector("#feedback").textContent = "Schade! Leider kein neuer Highscore!"
     }
 }
 
@@ -29,4 +27,8 @@ function toggleOverlay(element) {
 
 function removeInitClass() {
     document.querySelector(".manual").classList.remove("init");
+}
+
+function toggleDropdown() {
+    document.querySelector(".dropdown").classList.toggle("hidden");
 }

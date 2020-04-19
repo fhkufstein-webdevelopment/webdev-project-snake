@@ -13,10 +13,14 @@ snake [0] = {
 
 function addControls() {
     document.addEventListener("keydown", function (event) {
-        if (music === false && pause === false) {
+        // Start
+        if (event.keyCode >= 37 && event.keyCode <= 40 && music === false && pause === false) {
             bgmPlay();
             music = true;
+            document.querySelector(".game .presskey").classList.add("hidden");
         }
+
+        // Controls
         if (event.keyCode === 37 && dir !== "RIGHT") {
             dir = "LEFT";
         } else if (event.keyCode === 38 && dir !== "DOWN") {
@@ -28,6 +32,8 @@ function addControls() {
         } else if (event.keyCode === 80) {
             // Pauses the game and music
             checkGameStatus();
+            pause = !pause;
+            document.querySelector(".game .unpause").classList.toggle("hidden");
             if (music) {
                 bgm.pause();
                 music = false;

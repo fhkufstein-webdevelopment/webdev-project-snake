@@ -10,6 +10,8 @@ echo $this->header;
                 <p class="pause" id="pause">Game Paused</p>
                 <p class="animals" id="animals">12</p>
             </div>
+            <div class="presskey"><p>Pfeiltaste drücken um zu starten!</p></div>
+            <div class="unpause hidden"><p>P drücken um weiterzuspielen!</p></div>
             <canvas id="field" class="sizer" width="600" height="600"></canvas>
         </section>
         <section class="ol manual init closed">
@@ -46,7 +48,8 @@ echo $this->header;
             </div>
 
             <button onclick="toggleOverlay('manual');" class="continue">Spiel fortsetzen</button>
-            <button onclick="toggleOverlay('manual'); removeInitClass(); addControls()" class="begin">Spiel beginnen</button>
+            <button onclick="toggleOverlay('manual'); removeInitClass(); addControls()" class="begin">Spiel beginnen
+            </button>
         </section>
         <section class="ol finished closed">
             <div class="sizer">
@@ -78,30 +81,28 @@ echo $this->header;
             </table>
             <button onclick="toggleOverlay('score');" class="start">Zurück zum Spiel</button>
         </section>
-        <section>
-            <div>
-                <button onclick="toggleOverlay('score')" role="button" aria-label="Score">Highscore</button>
-            </div>
-            <button id="global" class="scoreButton">Global:
-                <?php $result = ScoreModel::getGlobalHighscore();
-                print_r($result->score) ?>
-            </button>
-            <button id="own" class="scoreButton">Eigen:
-                <?php $result = ScoreModel::getHighscoreFromUser($this->username);
-                print_r($result->highscore) ?>
-            </button>
-        </section>
     </main>
-    <nav class="sizer">
+    <nav>
         <?php if (LOGGED_IN == true): ?>
             <a href="logout">
                 <button role="button" aria-label="User">Logout</button>
             </a>
 
-            <button aria-label="User">User: <?php echo $this->username; ?></button>
+            <div class="dropdown hidden">
+                <button onclick="toggleDropdown()" aria-label="User"><?php echo $this->username; ?> <span>&#60;</span>
+                </button>
+
+                <section class="scores hidden">
+                    <button onclick="toggleOverlay('score'); toggleDropdown()" role="button" aria-label="Score">Scores</button>
+
+                    <p class="global">G: <span><?php $result = ScoreModel::getGlobalHighscore();
+                            print_r($result->score) ?></span></p>
+                    <p class="personal">P: <span><?php $result = ScoreModel::getHighscoreFromUser($this->username);
+                            print_r($result->highscore) ?></span></p>
+                </section>
+            </div>
         <?php endif; ?>
         <button onclick="toggleOverlay('manual')" role="button" aria-label="Manual">Hilfe</button>
-
     </nav>
 
 
