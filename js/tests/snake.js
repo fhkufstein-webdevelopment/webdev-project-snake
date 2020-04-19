@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function(event) {
+document.addEventListener("DOMContentLoaded", function() {
     let canv = document.getElementById("field");  // select canvas
     let ctx = canv.getContext("2d");   // set canvas to be a 2d objekt
 
@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
     /* ----------------------------------------------Only Testing------------------------------------------------------------------- */
     // only for testing
     let pointsAmount = 0;
-    let snakeColor = "#FF0000";
+    // let snakeColor = "#FF0000";
 
 
     // only for testing
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
         ctx.fill();                                         // fill the apple with the set color
         ctx.stroke();                                       // to actually draw the acr to the canvas
         console.log(appleX + " " + appleY);
-    };
+    }
 
     function snakeOver(snakeX,snakeY){
         if(snakeX < (appleX+applewidth) && snakeX > (appleX-applewidth) && snakeY < (appleY+appleheight) && snakeY > (appleY-applewidth)){
@@ -66,6 +66,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
             createNewCircle();  // if it is ture draw anohter circle
             return applePoints; // return the amount fo points you gain
         }
-    };
+    }
     /* ----------------------------------------------------------------------------------------------------------------- */
 });

@@ -13,7 +13,7 @@ function checkSupported() {
         snake [0] = {
             x: Math.floor(canvasSize / 2 * box),
             y: Math.floor(canvasSize / 2 * box)
-        }
+        };
         //Richtung bestimmen mit Knopfbelegung
         let dir;
         document.addEventListener("keydown", direction);

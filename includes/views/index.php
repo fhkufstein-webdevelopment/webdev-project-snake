@@ -12,33 +12,41 @@ echo $this->header;
             </div>
             <canvas id="field" class="sizer" width="600" height="600"></canvas>
         </section>
-        <section class="ol manual closed">
-            <div class="overlay-content-manual">
-                <h1 class="overlay-h1">Steuerung</h1>
-                <div class="up button"> &#8657;</div>
-                <br/>
-                <div class="left button">&#8656;</div>
-                <div class="down button">&#8659;</div>
-                <div class="right button">&#8658;</div>
-                <p>Richtung der Schlange bestimmen</p>
-                <div class="p button">P</div>
-                <p>um das Spiel zu pausieren</p>
-                <button onclick="toggleOverlay('manual');" class="start">Spiel fortsetzen</button>
-            </div>
-        </section>
-        <section class="ol start closed">
+        <section class="ol manual init closed">
             <h1 class="overlay-h1">Steuerung</h1>
             <div class="buttons">
-                <div class="up"><p>&#8656;</p></div>
-                <div class="left"><p>&#8656;</p></div>
-                <div class="down"><p>&#8656;</p></div>
-                <div class="right"><p>&#8656;</p></div>
+                <div class="up">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 10.5V40M25 10.5L15 20M25 10.5L35 20"/>
+                    </svg>
+                </div>
+                <div class="left">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.5 25L40 25M10.5 25L20 35M10.5 25L20 15"/>
+                    </svg>
+                </div>
+                <div class="down">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M25 39.5L25 10M25 39.5L35 30M25 39.5L15 30"/>
+                    </svg>
+                </div>
+                <div class="right">
+                    <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M39.5 25L10 25M39.5 25L30 15M39.5 25L30 35"/>
+                    </svg>
+                </div>
             </div>
 
             <p>Richtung der Schlange bestimmen</p>
-            <p class="pause">P um das Spiel zu pausieren</p>
+            <div class="pause">
+                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M14 36V15H32V18H35V27H32V30H20V36H14ZM20 27H29V18H20V27Z"/>
+                </svg>
+                <p>Spiel zu pausieren</p>
+            </div>
 
-            <button onclick="toggleOverlay('start'); bgmPlay();" class="start">Spiel beginnen</button>
+            <button onclick="toggleOverlay('manual');" class="continue">Spiel fortsetzen</button>
+            <button onclick="toggleOverlay('manual'); removeInitClass(); addControls()" class="begin">Spiel beginnen</button>
         </section>
         <section class="ol finished closed">
             <div class="sizer">
@@ -72,7 +80,7 @@ echo $this->header;
         </section>
         <section>
             <div>
-                <button id="highscore" role="button" aria-label="Score">Highscore</button>
+                <button onclick="toggleOverlay('score')" role="button" aria-label="Score">Highscore</button>
             </div>
             <button id="global" class="scoreButton">Global:
                 <?php $result = ScoreModel::getGlobalHighscore();
@@ -92,9 +100,7 @@ echo $this->header;
 
             <button aria-label="User">User: <?php echo $this->username; ?></button>
         <?php endif; ?>
-        <a>
-            <button id="manual" class="question" role="button" aria-label="Manual">Hilfe</button>
-        </a>
+        <button onclick="toggleOverlay('manual')" role="button" aria-label="Manual">Hilfe</button>
 
     </nav>
 

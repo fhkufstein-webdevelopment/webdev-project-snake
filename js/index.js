@@ -26,3 +26,7 @@ function toggleOverlay(element) {
     let tag = ".ol." + element;
     document.querySelector(tag).classList.toggle("closed");
 }
+
+function removeInitClass() {
+    document.querySelector(".manual").classList.remove("init");
+}

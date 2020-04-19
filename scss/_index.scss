@@ -52,25 +52,24 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: calc(100% + 50px);
+  transform: translateX(-25px);
+  height: calc(100% + 50px);
   z-index: 1;
   opacity: 1;
   pointer-events: all;
-
-  background-color: red;
+  background-color: $green;
 
   h1 {
     font-size: 2rem;
     margin-bottom: 2rem;
   }
 
-  button {
-    border: 2px solid black;
-    cursor: pointer;
+  p {
+    text-align: center;
   }
 
   &.score {
@@ -107,52 +106,62 @@ nav {
     }
   }
 
-  &.start, &.manual {
+  &.manual {
+    svg {
+      border: 3px solid $darkgreen;
+    }
+
     .buttons {
       display: flex;
       flex-wrap: wrap;
       margin-bottom: 1rem;
-
-      p {
-        display: inline-block;
-        font-size: 3rem;
-        transform-origin: center;
-      }
-
-      div {
-        flex-grow: 1;
-      }
+      justify-content: space-around;
 
       .up {
         width: 100%;
+        display: flex;
+        justify-content: center;
         margin-bottom: 1rem;
-        text-align: center;
-
-        p {
-          transform: rotate(90deg) translateY(-2px);
-        }
       }
 
-      .down p {
-        transform: rotate(-90deg);
-      }
-
-      .left p {
-        transform: translate(10px, -5px);
-      }
-
-      .right p {
-        transform: rotate(-180deg) translateY(-5px);
+      path {
+        stroke: $darkgreen;
+        stroke-width: 3px;
       }
     }
 
     .pause {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       margin: 2rem 0;
+
+      svg {
+        margin-bottom: 1rem;
+
+        path {
+          fill: $darkgreen;
+        }
+      }
     }
   }
 
   &.closed {
     opacity: 0;
     pointer-events: none;
+  }
+
+  .begin {
+    display: none;
+  }
+
+  &.init {
+    .begin {
+      display: block;
+    }
+
+    .continue {
+      display: none;
+    }
   }
 }

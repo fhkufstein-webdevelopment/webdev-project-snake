@@ -1,9 +1,3 @@
-/*  there are other libraries that could use "$" - so it is 100% save to use "jQuery" instead of "$"
-    if you don't use any other libraries than jQuery you could still go with "$"
-    so the following line would be
-    $(document).ready(function() {
-*/
-
 function drawUserScore(scoreToAdd, snakeLenght) {
     userScore += scoreToAdd;
     document.getElementById("points").innerText = userScore; // update points
@@ -12,7 +6,6 @@ function drawUserScore(scoreToAdd, snakeLenght) {
 
 
 function saveScore(userScore, gameStatus) {
-
     if (gameStatus) {
         fetch('index', {
             method: 'post',

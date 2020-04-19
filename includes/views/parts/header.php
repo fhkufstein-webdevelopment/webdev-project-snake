@@ -4,7 +4,6 @@
     <title>SNAKE - <?php echo ($this->title == "") ? "404" : $this->title ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap"/>
     <link href="css/main.css" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
@@ -25,7 +24,7 @@
         <script type="text/javascript" src="js/movement.js"></script>
         <script type="text/javascript" src="js/collision.js"></script>
         <script type="text/javascript" src="js/score.js"></script>
-        <script type="text/javascript" src="js/hellmode.js"></script>
+        <!--        <script type="text/javascript" src="js/hellmode.js"></script>-->
     <?php elseif ($this->current == "login"): ?>
         <script type="text/javascript" src="js/login.js"></script>
     <?php endif; ?>
@@ -33,6 +32,6 @@
 </head>
 <body>
 
-    <header class="logo">
-        <h1>SNAKE</h1>
-    </header>
+<header class="logo">
+    <h1>SNAKE</h1>
+</header>
