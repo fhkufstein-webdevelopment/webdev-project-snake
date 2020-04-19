@@ -3,11 +3,6 @@
 
 @import "variables";
 
-@import "index";
-@import "login";
-@import "logout";
-@import "404";
-
 html {
   background-color: $green;
   color: $darkgreen;
@@ -79,3 +74,9 @@ button {
     margin: 0 auto;
   }
 }
+
+/* Imports */
+@import "index";
+@import "login";
+@import "logout";
+@import "404";
