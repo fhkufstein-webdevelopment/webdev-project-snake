@@ -101,7 +101,8 @@ echo $this->header;
 
             <button aria-label="User">User: <?php echo $this->username; ?></button>
         <?php endif; ?>
-        <button id="manual" class="question" role="button" aria-label="Manual">Hilfe</button>
+        <a><button id="manual" class="question" role="button" aria-label="Manual">Hilfe</button></a>
+
     </nav>
 
 
