@@ -1,6 +1,6 @@
 # SNAKE Game
 
-Klassische Nokia Handy Spiel als kleines Browser Game
+Klassisches Nokia Handy Spiel im Browser
 
 ## Kurzanleitung
 
@@ -20,15 +20,17 @@ COMPASS
 
 ### Installation
 
-Schritt für Schritt Anleitung wie man das Projekt bei sich zum laufen bekommt
+Schritt für Schritt Anleitung wie man das Projekt zum laufen bekommt
 
 1. XAMPP starten und PHPMyAdmin öffnen
-2. Neuen Benutzer anlegen mit den Daten welche in dbconfig.php zu finden sind
+2. Datenbank in PHPMyAdmin anlegen (Name in dbconfig.php)
+3. Neuen Benutzer anlegen (Name in dbconfig.php)
+4. URL aufrufen
 
 
 ## Entwicklung
 
-PHPStorm ist der empfohlene IDE für diese Projekt
+PHPStorm ist der empfohlene IDE für dieses Projekt
 
 ### SCSS
 
@@ -50,7 +52,7 @@ compass watch
 
 * [PHP](https://www.php.net/) - Hypertext Preprocessor
 * [phpMyAdmin](https://www.phpmyadmin.net/) - Bringing MySQL to the web
-* [jQuery](https://jquery.com/) - The Write Less, Do More, JavaScript Library
+* [Javascript](http://vanilla-js.com/) - Fast, lightweight, cross-platform
 
 ## Autoren
 
