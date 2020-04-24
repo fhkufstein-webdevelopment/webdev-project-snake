@@ -69,7 +69,7 @@ echo $this->header;
                     <th>Score</th>
                 </tr>
                 </thead>
-                <tbody>git pu
+                <tbody>
                 <?php $scoreArray = ScoreModel::getGlobalHighscoreList();
                 foreach ($scoreArray as $row) :?>
                     <tr>
